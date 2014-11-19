@@ -72,6 +72,10 @@
       <Project>{dbb54aff-5c0e-4b7f-bdf5-5b36626a0b3c}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\MyLibraryProject\Vector2D.cpp" />
+    <ClCompile Include="Source.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
