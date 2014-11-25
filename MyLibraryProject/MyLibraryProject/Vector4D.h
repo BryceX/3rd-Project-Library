@@ -9,6 +9,11 @@ public:
 	Vector4D operator + (Vector4D anotherVector);
 	Vector4D operator - (Vector4D anotherVector);
 	Vector4D operator * (float anotherFloat);
+	Vector4D operator / (float anotherFloat);
+	Vector4D operator = (Vector4D anotherVector);
+	Vector4D operator == (Vector4D anotherVector);
+	Vector4D operator += (Vector4D anotherVector);
+	Vector4D operator -= (Vector4D anotherVector);
 	Vector4D();
 	~Vector4D();
 };

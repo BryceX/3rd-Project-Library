@@ -20,6 +20,12 @@ void Vector2D::Normalize()
 	x = x / Magnitude();
 	y = y / Magnitude();
 }
+float Vector2D::Lerp (Vector2D a_pos0, Vector2D a_pos1, float L)
+{
+	Vector2D temp;
+	temp = (a_pos0 + L) * (a_pos1 - a_pos0);
+	
+}
 float Vector2D::DotProduct(Vector2D dotProductVector)
 {
 	float finalDotProduct = (x*dotProductVector.x) + (y*dotProductVector.y);
@@ -51,3 +57,10 @@ Vector2D Vector2D::operator* (float anotherFloat)
 	temp.y = y * anotherFloat;
 	return temp;
 }
+Vector2D Vector2D::operator= (Vector2D anotherVector)
+{
+	Vector2D temp;
+	temp.x = anotherVector.x;
+	temp.y = anotherVector.y;
+}
+
