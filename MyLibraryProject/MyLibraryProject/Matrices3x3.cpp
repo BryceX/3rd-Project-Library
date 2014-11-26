@@ -1,10 +1,10 @@
-#include "Matrices3x3.h"
+#include "Matrix3x3.h"
 
 
-Matrices3x3::Matrices3x3()
+Matrix3x3::Matrix3x3()
 {
 }
-void Matrices3x3::FillMatrix(float a_1, float a_2, float a_3, float b_1, float b_2, float b_3, float c_1, float c_2, float c_3)
+void Matrix3x3::FillMatrix(float a_1, float a_2, float a_3, float b_1, float b_2, float b_3, float c_1, float c_2, float c_3)
 {
 	matrix[0][0] = a_1;
 	matrix[1][0] = a_2;
@@ -17,6 +17,20 @@ void Matrices3x3::FillMatrix(float a_1, float a_2, float a_3, float b_1, float b
 	matrix[2][2] = c_3;
 }
 
-Matrices3x3::~Matrices3x3()
+
+Matrix3x3::~Matrix3x3()
 {
+}
+Matrix3x3 Matrix3x3::operator *(Matrix3x3 anotherMatrix)
+{
+	Matrix3x3 temp;
+	temp.matrix[0][0] = (matrix[0][0] * anotherMatrix.matrix[0][0]) + (matrix[0][1] * anotherMatrix.matrix[1][0]) + (matrix[0][2] * anotherMatrix.matrix[2][0]);
+	temp.matrix[0][1] = (matrix[0][0] * anotherMatrix.matrix[0][1]) + (matrix[0][1] * anotherMatrix.matrix[1][1]) + (matrix[0][2] * anotherMatrix.matrix[2][1]);
+	temp.matrix[0][2] = (matrix[0][0] * anotherMatrix.matrix[0][2]) + (matrix[0][1] * anotherMatrix.matrix[][0]) + (matrix[0][2] * anotherMatrix.matrix[2][0]);
+	temp.matrix[1][0] = (matrix[0][0] * anotherMatrix.matrix[0][0]) + (matrix[0][1] * anotherMatrix.matrix[1][0]) + (matrix[0][2] * anotherMatrix.matrix[2][0]);
+	temp.matrix[1][0] = (matrix[0][0] * anotherMatrix.matrix[0][0]) + (matrix[0][1] * anotherMatrix.matrix[1][0]) + (matrix[0][2] * anotherMatrix.matrix[2][0]);
+	temp.matrix[1][0] = (matrix[0][0] * anotherMatrix.matrix[0][0]) + (matrix[0][1] * anotherMatrix.matrix[1][0]) + (matrix[0][2] * anotherMatrix.matrix[2][0]);
+	temp.matrix[2][0] = (matrix[0][0] * anotherMatrix.matrix[0][0]) + (matrix[0][1] * anotherMatrix.matrix[1][0]) + (matrix[0][2] * anotherMatrix.matrix[2][0]);
+	temp.matrix[2][0] = (matrix[0][0] * anotherMatrix.matrix[0][0]) + (matrix[0][1] * anotherMatrix.matrix[1][0]) + (matrix[0][2] * anotherMatrix.matrix[2][0]);
+	temp.matrix[2][0] = (matrix[0][0] * anotherMatrix.matrix[0][0]) + (matrix[0][1] * anotherMatrix.matrix[1][0]) + (matrix[0][2] * anotherMatrix.matrix[2][0]);
 }
