@@ -4,10 +4,13 @@
 Vector3D::Vector3D()
 {
 }
-float Vector3D::Lerp(Vector3D a_pos0, Vector3D a_pos1, float L)
+Vector3D Vector3D::Lerp(Vector3D end, float t)
 {
 	Vector3D temp;
-	temp = (a_pos0 + L) * (a_pos1 - a_pos0);
+	Vector3D start;
+	start = *this;
+	temp = start + (end - start) * t;
+	return temp;
 }
 float Vector3D::Magnitude()
 {
@@ -50,5 +53,13 @@ Vector3D Vector3D::operator * (float anotherFloat)
 	temp.x = x * anotherFloat;
 	temp.y = y * anotherFloat;
 	temp.z = z * anotherFloat;
+	return temp;
+}
+Vector3D Vector3D::operator = (Vector3D anotherVector)
+{
+	Vector3D temp;
+	temp.x = anotherVector.x;
+	temp.y = anotherVector.y;
+	temp.z = anotherVector.z;
 	return temp;
 }

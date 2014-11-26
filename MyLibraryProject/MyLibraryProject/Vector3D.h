@@ -5,7 +5,7 @@ public:
 	float x;
 	float y;
 	float z;
-	float Lerp(Vector3D a_pos0, Vector3D a_pos1, float L);
+	Vector3D Lerp(Vector3D end, float t);
 	float Magnitude();
 	void Normalize();
 	float finalCrossProduct;

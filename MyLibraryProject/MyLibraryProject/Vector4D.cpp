@@ -37,3 +37,12 @@ Vector4D Vector4D::operator* (float anotherFloat)
 	temp.z = z * anotherFloat;
 	return temp;
 }
+Vector4D Vector4D::operator = (Vector4D anotherVector)
+{
+	Vector4D temp;
+	temp.w = anotherVector.w;
+	temp.x = anotherVector.x;
+	temp.y = anotherVector.y;
+	temp.z = anotherVector.z;
+	return temp;
+}

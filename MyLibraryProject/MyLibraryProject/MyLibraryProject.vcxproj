@@ -74,11 +74,15 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Matrices3x3.h" />
+    <ClInclude Include="Matrices4x4.h" />
     <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Vector3D.h" />
     <ClInclude Include="Vector4D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Matrices3x3.cpp" />
+    <ClCompile Include="Matrices4x4.cpp" />
     <ClCompile Include="Vector2D.cpp" />
     <ClCompile Include="Vector3D.cpp" />
     <ClCompile Include="Vector4D.cpp" />

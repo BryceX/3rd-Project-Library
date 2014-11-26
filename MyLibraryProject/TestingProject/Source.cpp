@@ -1,14 +1,13 @@
 #include "Vector2D.h"
 #include "Vector3D.h"
 #include "Vector4D.h"
+#include "Matrices3x3.h"
 #include <iostream>
 
 int main(){
 
-	Vector2D somename(3, 4);
-	somename.x;
-	somename.y;
-	std::cout << somename.x << std::endl;
-	std::cout << somename.y << std::endl;
+	Matrices3x3 nyarly;
+	nyarly.FillMatrix(1, 2, 3, 4, 5, 6, 7, 8, 9);
+	std::cout << nyarly.matrix[1][2] << std::endl;
 	system("pause");
 }
