@@ -4,8 +4,17 @@
 Vector4D::Vector4D()
 {
 }
-
-
+float Vector4D::Magnitude()
+{
+	return sqrt(pow(w, 2) + pow(x, 2) + pow(y, 2) + pow(z, 2));
+}
+void Vector4D::Normalize()
+{
+	w = w / Magnitude();
+	x = x / Magnitude();
+	y = y / Magnitude();
+	z = z / Magnitude();
+}
 Vector4D::~Vector4D()
 {
 }

@@ -6,6 +6,8 @@ public:
 	float x;
 	float y;
 	float z;
+	float Magnitude();
+	void Normalize();
 	Vector4D operator + (Vector4D anotherVector);
 	Vector4D operator - (Vector4D anotherVector);
 	Vector4D operator * (float anotherFloat);
