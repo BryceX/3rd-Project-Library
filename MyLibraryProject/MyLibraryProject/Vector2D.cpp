@@ -61,11 +61,20 @@ Vector2D Vector2D::operator* (float anotherFloat)
 	return temp;
 }
 
-Vector2D Vector2D::operator= (Vector2D anotherVector)
+Vector2D& Vector2D::operator= (Vector2D anotherVector)
 {
 	Vector2D temp;
 	temp.x = anotherVector.x;
 	temp.y = anotherVector.y;
 	return temp;
 }
-
+Vector2D& Vector2D::operator+= (Vector2D anotherVector)
+{
+	 *this = *this + anotherVector;
+	 return *this;
+}
+Vector2D& Vector2D::operator-= (Vector2D anotherVector)
+{
+	*this = *this - anotherVector;
+	return *this;
+}

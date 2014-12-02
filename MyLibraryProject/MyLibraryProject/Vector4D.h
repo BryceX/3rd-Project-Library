@@ -2,12 +2,15 @@
 class Vector4D
 {
 public:
-	int w;
 	float x;
 	float y;
 	float z;
+	float w;
+
 	float Magnitude();
 	void Normalize();
+	// TODO: Construct from Color Hex
+
 	Vector4D operator + (Vector4D anotherVector);
 	Vector4D operator - (Vector4D anotherVector);
 	Vector4D operator * (float anotherFloat);
@@ -16,6 +19,7 @@ public:
 	Vector4D operator == (Vector4D anotherVector);
 	Vector4D operator += (Vector4D anotherVector);
 	Vector4D operator -= (Vector4D anotherVector);
+
 	Vector4D();
 	~Vector4D();
 };

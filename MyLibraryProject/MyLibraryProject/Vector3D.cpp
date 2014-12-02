@@ -27,6 +27,12 @@ float Vector3D::CrossProduct(Vector3D crossProductVector)
 	float finalCrossProduct = (y*crossProductVector.z - z*crossProductVector.y, z*crossProductVector.x - x*crossProductVector.z, x*crossProductVector.y - y*crossProductVector.x);
 	return finalCrossProduct;
 } 
+float Vector3D::DotProduct(Vector3D dotProductVector)
+{
+	float finalDotProduct = (x*dotProductVector.x) + (y*dotProductVector.y) + (z*dotProductVector.z);
+	return finalDotProduct;
+}
+
 Vector3D::~Vector3D()
 {
 }
