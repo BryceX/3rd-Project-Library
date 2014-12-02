@@ -20,21 +20,16 @@ void Matrix3x3::FillMatrix(float a_1, float a_2, float a_3, float b_1, float b_2
 void Matrix3x3::Transpose()
 {
 	Matrix3x3 temp;
-	temp.matrix = matrix;
-	matrix[0][0] = matrix[0][0];
-	matrix[1][1] = matrix[1][1];
-	matrix[2][2] = matrix[2][2];
-	matrix[3][3] = matrix[3][3];
-	matrix[1][0] = matrix[0][1];
-	matrix[0][1] = matrix[1][0];
-	matrix[2][0] = matrix[0][2];
-	matrix[0][2] = matrix[2][0];
-	matrix[3][0] = matrix[0][3];
-	matrix[0][3] = matrix[3][0];
-	matrix[1][2] = matrix[2][1];
-	matrix[2][1] = matrix[1][2];
-	matrix[1][3] = matrix[3][1];
-	matrix[3][1] = matrix[1][3];
+	temp.matrix[0][0] = matrix[0][0];
+	temp.matrix[1][1] = matrix[1][1];
+	temp.matrix[2][2] = matrix[2][2];
+	temp.matrix[1][0] = matrix[0][1];
+	temp.matrix[0][1] = matrix[1][0];
+	temp.matrix[2][0] = matrix[0][2];
+	temp.matrix[0][2] = matrix[2][0];
+	temp.matrix[1][2] = matrix[2][1];
+	temp.matrix[2][1] = matrix[1][2];
+	*this = temp;
 }
 
 Matrix3x3::~Matrix3x3()
@@ -66,5 +61,5 @@ Matrix3x3 Matrix3x3::operator = (Matrix3x3 anotherMatrix)
 	matrix[2][0] = anotherMatrix.matrix[2][0];
 	matrix[2][1] = anotherMatrix.matrix[2][1];
 	matrix[2][2] = anotherMatrix.matrix[2][2];
-	return;
+	return *this;
 }

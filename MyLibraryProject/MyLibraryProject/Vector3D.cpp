@@ -61,11 +61,33 @@ Vector3D Vector3D::operator * (float anotherFloat)
 	temp.z = z * anotherFloat;
 	return temp;
 }
-Vector3D Vector3D::operator = (Vector3D anotherVector)
+Vector3D& Vector3D::operator = (Vector3D anotherVector)
 {
 	Vector3D temp;
 	temp.x = anotherVector.x;
 	temp.y = anotherVector.y;
 	temp.z = anotherVector.z;
 	return temp;
+}
+
+//
+// RETURNTYPE NAME (PARAMETERS)
+bool Vector3D::operator == (Vector3D anotherVector)
+{
+	if (x - anotherVector.x < .00001 &&
+		y - anotherVector.y < .00001)
+	{
+		return true;
+	}
+	else return false;
+}
+Vector3D& Vector3D::operator += (Vector3D anotherVector)
+{
+	*this = *this + anotherVector;
+	return *this;
+}
+Vector3D& Vector3D::operator -= (Vector3D anotherVector)
+{
+	*this = *this - anotherVector;
+	return *this;
 }

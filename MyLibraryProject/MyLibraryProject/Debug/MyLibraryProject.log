@@ -1,16 +1,8 @@
-﻿Build started 12/2/2014 10:07:07 AM.
-     1>Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\MyLibraryProject\MyLibraryProject.vcxproj" on node 2 (Rebuild target(s)).
+﻿Build started 12/2/2014 3:04:01 PM.
+     1>Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\MyLibraryProject\MyLibraryProject.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Matrices3x3.cpp Matrices4x4.cpp Vector2D.cpp Vector3D.cpp Vector4D.cpp
-         Vector4D.cpp
-     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\mylibraryproject\vector4d.cpp(9): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\mylibraryproject\vector4d.cpp(13): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\mylibraryproject\vector4d.cpp(43): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
-         Vector3D.cpp
-         Vector2D.cpp
-         Matrices4x4.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Matrices3x3.cpp
          Matrices3x3.cpp
-         Generating Code...
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\MyLibraryProject.lib" /NOLOGO Debug\Matrices3x3.obj
          Debug\Matrices4x4.obj
@@ -18,8 +10,8 @@
          Debug\Vector3D.obj
          Debug\Vector4D.obj
          MyLibraryProject.vcxproj -> C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\MyLibraryProject.lib
-     1>Done Building Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\MyLibraryProject\MyLibraryProject.vcxproj" (Rebuild target(s)).
+     1>Done Building Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\MyLibraryProject\MyLibraryProject.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.72
+Time Elapsed 00:00:00.46

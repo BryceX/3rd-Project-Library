@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 class Matrix3x3
 {
 public:
@@ -8,5 +9,16 @@ public:
 	Matrix3x3 operator * (Matrix3x3 matrix);
 	Matrix3x3 operator = (Matrix3x3 matrix);
 	void Transpose();
+
 	~Matrix3x3();
+	friend std::ostream &operator<<(std::ostream &output, const Matrix3x3 &matrix){
+		for (int c = 0; c<3; ++c) {
+			for (int r = 0; r<3; ++r) {
+				output << "[" << r << "," << c << "]: " << matrix.matrix[r][c] << " ";
+			}
+			output << std::endl;
+		}
+		return output;
+
+	}
 };

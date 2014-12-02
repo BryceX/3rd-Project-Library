@@ -7,13 +7,12 @@
 
 int main(){
 
-	Matrix4x4 somematrix;
-	somematrix.FillMatrix(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
-	
-	Matrix4x4 anothermatrix;
-	anothermatrix.FillMatrix(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
-	
-	std::cout << (somematrix * anothermatrix) << std::endl;
+	Matrix3x3 somematrix;
+
+	somematrix.FillMatrix(1, 1, 2, 1, 1, 2, 1, 1, 2);
+	somematrix.Transpose();
+	std::cout << somematrix << std::endl;
+
 
 	system("pause");
 }

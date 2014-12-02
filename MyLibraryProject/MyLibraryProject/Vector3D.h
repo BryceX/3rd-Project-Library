@@ -16,10 +16,10 @@ public:
 	Vector3D operator - (Vector3D anotherVector);
 	Vector3D operator * (float anotherFloat);
 	Vector3D operator / (float anotherFloat);
-	Vector3D operator = (Vector3D anotherVector);
-	Vector3D operator == (Vector3D anotherVector);
-	Vector3D operator += (Vector3D anotherVector);
-	Vector3D operator -= (Vector3D anotherVector);
+	Vector3D& operator = (Vector3D anotherVector);
+	bool operator == (Vector3D anotherVector);
+	Vector3D& operator += (Vector3D anotherVector);
+	Vector3D& operator -= (Vector3D anotherVector);
 	Vector3D();
 	~Vector3D();
 };
