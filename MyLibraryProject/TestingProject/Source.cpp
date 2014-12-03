@@ -7,12 +7,15 @@
 
 int main(){
 
-	Matrix3x3 somematrix;
+	unsigned int testhex = 0x7D23F814;
+	unsigned int w, x, y, z;
 
-	somematrix.FillMatrix(1, 1, 2, 1, 1, 2, 1, 1, 2);
-	somematrix.Transpose();
-	std::cout << somematrix << std::endl;
-
+	x = (testhex & 0xFF000000) >> 24;
+	y = (testhex & 0xFF0000) >> 16;
+	z = (testhex & 0xFF00) >> 8;
+	w = (testhex & 0xFF) >> 0;
+	
+	std::cout << x << std::endl << y << std::endl << z << std::endl << w << std::endl;
 
 	system("pause");
 }
