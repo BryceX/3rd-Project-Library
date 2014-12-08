@@ -74,18 +74,20 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Matrix3x3.h" />
-    <ClInclude Include="Matrix4x4.h" />
-    <ClInclude Include="Vector2D.h" />
-    <ClInclude Include="Vector3D.h" />
-    <ClInclude Include="Vector4D.h" />
+    <ClInclude Include="MyLibrary\Matrix3x3.h" />
+    <ClInclude Include="MyLibrary\Matrix4x4.h" />
+    <ClInclude Include="MyLibrary\MyLibrary.h" />
+    <ClInclude Include="MyLibrary\Vector2D.h" />
+    <ClInclude Include="MyLibrary\Vector3D.h" />
+    <ClInclude Include="MyLibrary\Vector4D.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Matrices3x3.cpp" />
-    <ClCompile Include="Matrices4x4.cpp" />
-    <ClCompile Include="Vector2D.cpp" />
-    <ClCompile Include="Vector3D.cpp" />
-    <ClCompile Include="Vector4D.cpp" />
+    <ClCompile Include="MyLibrary\Matrices3x3.cpp" />
+    <ClCompile Include="MyLibrary\Matrices4x4.cpp" />
+    <ClCompile Include="MyLibrary\MyLibrary.cpp" />
+    <ClCompile Include="MyLibrary\Vector2D.cpp" />
+    <ClCompile Include="MyLibrary\Vector3D.cpp" />
+    <ClCompile Include="MyLibrary\Vector4D.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
