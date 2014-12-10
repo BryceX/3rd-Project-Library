@@ -41,12 +41,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>C:\Users\bryson.au\Desktop\gtest-1.7.0\msvc\gtest\Debug;C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Users\bryson.au\Desktop\gtest-1.7.0\msvc\gtest-md\Debug;C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug;$(LibraryPath)</LibraryPath>
     <IncludePath>C:\Users\bryson.au\Desktop\gtest-1.7.0;C:\Users\bryson.au\Desktop\gtest-1.7.0\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <LibraryPath>C:\Users\bryson.au\Desktop\gtest-1.7.0\msvc\gtest\Release;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Users\bryson.au\Desktop\gtest-1.7.0\msvc\gtest-md\Release;$(LibraryPath)</LibraryPath>
     <IncludePath>C:\Users\bryson.au\Desktop\gtest-1.7.0;C:\Users\bryson.au\Desktop\gtest-1.7.0\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -62,6 +62,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>gtestd.lib;MyLibraryProject.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>$(TargetDir)$(TargetFileName)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -80,6 +83,9 @@
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>gtest.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>$(TargetDir)$(TargetFileName)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
