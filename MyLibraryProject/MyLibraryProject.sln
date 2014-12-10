@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyLibraryProject", "MyLibra
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestingProject", "TestingProject\TestingProject.vcxproj", "{404F598C-E680-436C-A230-4CC49C915F63}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GTEST", "GTEST\GTEST.vcxproj", "{118B173C-949A-4D01-8413-B000CDD54A02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,10 @@ Global
 		{404F598C-E680-436C-A230-4CC49C915F63}.Debug|Win32.Build.0 = Debug|Win32
 		{404F598C-E680-436C-A230-4CC49C915F63}.Release|Win32.ActiveCfg = Release|Win32
 		{404F598C-E680-436C-A230-4CC49C915F63}.Release|Win32.Build.0 = Release|Win32
+		{118B173C-949A-4D01-8413-B000CDD54A02}.Debug|Win32.ActiveCfg = Debug|Win32
+		{118B173C-949A-4D01-8413-B000CDD54A02}.Debug|Win32.Build.0 = Debug|Win32
+		{118B173C-949A-4D01-8413-B000CDD54A02}.Release|Win32.ActiveCfg = Release|Win32
+		{118B173C-949A-4D01-8413-B000CDD54A02}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
