@@ -1,8 +1,8 @@
 #include "MyLibrary.h"
 
-float Lerp(float var1, float var2, float value)
+float Lerp(float var1, float var2, float percentvalue)
 {
-	return var1 + value * (var2 - var1);
+	return var1 + percentvalue * (var2 - var1);
 }
 float GetRadians(float degrees)
 {

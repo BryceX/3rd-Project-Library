@@ -11,11 +11,15 @@ public:
 	void SetTranslate(Vector4D vector);
 	void SetRotate(Vector4D vector, float degrees);
 	void SetScale(Vector4D scaleNumber);
+	void SetOrthographicProjection(float leftLimit, float rightLimit, float upperLimit, float lowerLimit, float far, float near);
 	Matrix4x4 operator * (Matrix4x4 matrix);
 	~Matrix4x4();
-	friend std::ostream &operator<<(std::ostream &output, const Matrix4x4 &matrix){
-		for (int c = 0; c<4; ++c) {
-			for (int r = 0; r<4; ++r) {
+	friend std::ostream &operator<<(std::ostream &output, const Matrix4x4 &matrix)
+	{
+		for (int c = 0; c<4; ++c) 
+		{
+			for (int r = 0; r<4; ++r) 
+			{
 				output << "[" << r << "," << c << "]: " << matrix.matrix[r][c] << " ";
 			}
 			output << std::endl;

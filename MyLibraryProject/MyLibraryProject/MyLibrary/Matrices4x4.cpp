@@ -4,6 +4,7 @@
 Matrix4x4::Matrix4x4()
 {
 }
+
 void Matrix4x4::FillMatrix(float a_1, float a_2, float a_3, float a_4, float b_1, float b_2, float b_3, float b_4, float c_1, float c_2, float c_3, float c_4, float d_1, float d_2, float d_3, float d_4)
 {
 	matrix[0][0] = a_1;
@@ -105,6 +106,27 @@ void Matrix4x4::SetScale(Vector4D scaleNumber)
 	scaleMatrix.matrix[1][3] = 0;
 	scaleMatrix.matrix[2][3] = 0;
 	scaleMatrix.matrix[3][3] = scaleNumber.w;
+	return;
+}
+void Matrix4x4::SetOrthographicProjection(float leftLimit, float rightLimit, float upperLimit, float lowerLimit, float far, float near)
+{
+	Matrix4x4 temp;
+	temp.matrix[0][0] = 2 / (rightLimit - leftLimit);
+	temp.matrix[1][0] = 0;
+	temp.matrix[2][0] = 0;
+	temp.matrix[3][0] = 0;
+	temp.matrix[0][1] = 0;
+	temp.matrix[1][1] = 2 / (upperLimit - lowerLimit);
+	temp.matrix[2][1] = 0;
+	temp.matrix[3][1] = 0;
+	temp.matrix[0][2] = 0;
+	temp.matrix[1][2] = 0;
+	temp.matrix[2][2] = -1 / (far - near);
+	temp.matrix[3][2] = 0;
+	temp.matrix[0][3] = (rightLimit + leftLimit) / (rightLimit - leftLimit);
+	temp.matrix[1][3] = (upperLimit + lowerLimit);
+	temp.matrix[2][3] = near / (far - near);
+	temp.matrix[3][3] = 1;
 	return;
 }
 Matrix4x4::~Matrix4x4()
