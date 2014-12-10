@@ -53,6 +53,14 @@ Vector3D Vector3D::operator - (Vector3D anotherVector)
 	temp.z = z - anotherVector.z;
 	return temp;
 }
+Vector3D Vector3D::operator + (float anotherFloat)
+{
+	Vector3D temp;
+	temp.x = x + anotherFloat;
+	temp.y = y + anotherFloat;
+	temp.z = z + anotherFloat;
+	return temp;
+}
 Vector3D Vector3D::operator * (float anotherFloat)
 {
 	Vector3D temp;
@@ -67,6 +75,14 @@ Vector3D& Vector3D::operator = (Vector3D anotherVector)
 	temp.x = anotherVector.x;
 	temp.y = anotherVector.y;
 	temp.z = anotherVector.z;
+	return temp;
+}
+Vector3D& Vector3D::operator = (float anotherFloat)
+{
+	Vector3D temp;
+	temp.x = anotherFloat;
+	temp.y = anotherFloat;
+	temp.z = anotherFloat;
 	return temp;
 }
 
@@ -90,4 +106,9 @@ Vector3D& Vector3D::operator -= (Vector3D anotherVector)
 {
 	*this = *this - anotherVector;
 	return *this;
+}
+std::ostream& operator<<(std::ostream& os, const Vector3D& dt)
+{
+	os << dt.x << '/' << dt.y << '/' << dt.z;
+	return os;
 }

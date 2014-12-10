@@ -23,22 +23,6 @@ void Matrix3x3::FillMatrix(float a_1, float a_2, float a_3, float b_1, float b_2
 	matrix[1][2] = c_2;
 	matrix[2][2] = c_3;
 }
-/*
-void Matrix3x3::Translate(float a_x, float a_y)
-{
-	translationMatrix[0][0] = 1;
-	translationMatrix[0][1] = 0;
-	translationMatrix[0][2] = 0;
-	translationMatrix[1][0] = 0;
-	translationMatrix[1][1] = 1;
-	translationMatrix[1][2] = 0;
-	translationMatrix[2][0] = a_x;
-	translationMatrix[2][1] = a_y;
-	translationMatrix[2][2] = 1;
-	Matrix3x3 temp;
-	temp.translationMatrix[0][0] = 
-}*/
-
 void Matrix3x3::Transpose()
 {
 	Matrix3x3 temp;
@@ -53,6 +37,50 @@ void Matrix3x3::Transpose()
 	temp.matrix[2][1] = matrix[1][2];
 	*this = temp;
 }
+
+void Matrix3x3::SetTranslate(Vector3D vector)
+{
+	Matrix3x3 transformMatrix;
+	transformMatrix.matrix[0][0] = 1;
+	transformMatrix.matrix[1][0] = 0;
+	transformMatrix.matrix[2][0] = vector.x;
+	transformMatrix.matrix[0][1] = 0;
+	transformMatrix.matrix[1][1] = 1;
+	transformMatrix.matrix[2][1] = vector.y;
+	transformMatrix.matrix[0][2] = 0;
+	transformMatrix.matrix[1][2] = 0;
+	transformMatrix.matrix[2][2] = vector.z;
+	*this = transformMatrix;
+}
+void Matrix3x3::SetRotate(Vector3D vector, float degrees)
+{
+	Matrix3x3 transformMatrix;
+	transformMatrix.matrix[0][0] = cos(degrees);
+	transformMatrix.matrix[1][0] = -sin(degrees);
+	transformMatrix.matrix[2][0] = 0;
+	transformMatrix.matrix[0][1] = sin(degrees);
+	transformMatrix.matrix[1][1] = cos(degrees);
+	transformMatrix.matrix[2][1] = 0;
+	transformMatrix.matrix[0][2] = 0;
+	transformMatrix.matrix[1][2] = 0;
+	transformMatrix.matrix[2][2] = 1;
+	return;
+}
+void Matrix3x3::SetScale(Vector3D scaleNumber)
+{
+	Matrix3x3 scaleMatrix;
+	scaleMatrix.matrix[0][0] = scaleNumber.x;
+	scaleMatrix.matrix[1][0] = 0;
+	scaleMatrix.matrix[2][0] = 0;
+	scaleMatrix.matrix[0][1] = 0;
+	scaleMatrix.matrix[1][1] = scaleNumber.y;
+	scaleMatrix.matrix[2][1] = 0;
+	scaleMatrix.matrix[0][2] = 0;
+	scaleMatrix.matrix[1][2] = 0;
+	scaleMatrix.matrix[2][2] = scaleNumber.z;
+	return;
+}
+
 
 Matrix3x3::~Matrix3x3()
 {

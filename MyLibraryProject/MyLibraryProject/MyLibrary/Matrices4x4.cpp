@@ -23,7 +23,90 @@ void Matrix4x4::FillMatrix(float a_1, float a_2, float a_3, float a_4, float b_1
 	matrix[2][3] = d_3;
 	matrix[3][3] = d_4;
 }
-
+void Matrix4x4::Transpose()
+{
+	Matrix4x4 temp;
+	temp.matrix[0][0] = matrix[0][0];
+	temp.matrix[1][0] = matrix[0][1];
+	temp.matrix[2][0] = matrix[0][2];
+	temp.matrix[3][0] = matrix[0][3];
+	temp.matrix[0][1] = matrix[1][0];
+	temp.matrix[1][1] = matrix[1][1];
+	temp.matrix[2][1] = matrix[1][2];
+	temp.matrix[3][1] = matrix[1][3];
+	temp.matrix[0][2] = matrix[2][0];
+	temp.matrix[1][2] = matrix[2][1];
+	temp.matrix[2][2] = matrix[2][2];
+	temp.matrix[3][2] = matrix[2][3];
+	temp.matrix[0][3] = matrix[3][0];
+	temp.matrix[1][3] = matrix[3][1];
+	temp.matrix[2][3] = matrix[3][2];
+	temp.matrix[3][3] = matrix[3][3];
+	*this = temp;
+}
+void Matrix4x4::SetTranslate(Vector4D vector)
+{
+	Matrix4x4 transformMatrix;
+	transformMatrix.matrix[0][0] = 1;
+	transformMatrix.matrix[1][0] = 0;
+	transformMatrix.matrix[2][0] = 0;
+	transformMatrix.matrix[3][0] = vector.x;
+	transformMatrix.matrix[0][1] = 0;
+	transformMatrix.matrix[1][1] = 1;
+	transformMatrix.matrix[2][1] = 0;
+	transformMatrix.matrix[3][1] = vector.y;
+	transformMatrix.matrix[0][2] = 0;
+	transformMatrix.matrix[1][2] = 0;
+	transformMatrix.matrix[2][2] = 1;
+	transformMatrix.matrix[3][2] = vector.z;
+	transformMatrix.matrix[0][3] = 0;
+	transformMatrix.matrix[1][3] = 0;
+	transformMatrix.matrix[2][3] = 0;
+	transformMatrix.matrix[3][3] = vector.w;
+	*this = transformMatrix;
+}
+void Matrix4x4::SetRotate(Vector4D vector, float degrees)
+{
+	Matrix4x4 transformMatrix;
+	transformMatrix.matrix[0][0] = cos(degrees);
+	transformMatrix.matrix[1][0] = -sin(degrees);
+	transformMatrix.matrix[2][0] = 0;
+	transformMatrix.matrix[3][0] = 0;
+	transformMatrix.matrix[0][1] = sin(degrees);
+	transformMatrix.matrix[1][1] = cos(degrees);
+	transformMatrix.matrix[2][1] = 0;
+	transformMatrix.matrix[3][1] = 0;
+	transformMatrix.matrix[0][2] = 0;
+	transformMatrix.matrix[1][2] = 0;
+	transformMatrix.matrix[2][2] = 1;
+	transformMatrix.matrix[3][2] = 0;
+	transformMatrix.matrix[0][3] = 0;
+	transformMatrix.matrix[1][3] = 0;
+	transformMatrix.matrix[2][3] = 0;
+	transformMatrix.matrix[3][3] = 1;
+	return;
+}
+void Matrix4x4::SetScale(Vector4D scaleNumber)
+{
+	Matrix4x4 scaleMatrix;
+	scaleMatrix.matrix[0][0] = scaleNumber.x;
+	scaleMatrix.matrix[1][0] = 0;
+	scaleMatrix.matrix[2][0] = 0;
+	scaleMatrix.matrix[3][0] = 0;
+	scaleMatrix.matrix[0][1] = 0;
+	scaleMatrix.matrix[1][1] = scaleNumber.y;
+	scaleMatrix.matrix[2][1] = 0;
+	scaleMatrix.matrix[3][1] = 0;
+	scaleMatrix.matrix[0][2] = 0;
+	scaleMatrix.matrix[1][2] = 0;
+	scaleMatrix.matrix[2][2] = scaleNumber.z;
+	scaleMatrix.matrix[3][2] = 0;
+	scaleMatrix.matrix[0][3] = 0;
+	scaleMatrix.matrix[1][3] = 0;
+	scaleMatrix.matrix[2][3] = 0;
+	scaleMatrix.matrix[3][3] = scaleNumber.w;
+	return;
+}
 Matrix4x4::~Matrix4x4()
 {
 }
