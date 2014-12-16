@@ -3,22 +3,14 @@
 
 int main()
 {
-	/*
-	Vector3D vector;
-	vector.x = 1;
-	vector.y = 1;
-	vector.z = 1;
-	Matrix3x3 translationMatrix;
-	translationMatrix.Translate(vector);
-	std::cout << translationMatrix << std::endl;
-	*/
-	
-	/*std::cout << NextPow2(37) << std::endl;*/
-	/*Matrix4x4 temp;
-	temp.FillMatrix(1, 56, 1, 1, 1, 1, 1, 11, 1, 1, 1, 111, 1, 11, 1, 2);
-	temp.Transpose();
+	Vector2D temp1;
+	temp1.x = 0;
+	temp1.y = 0;
+	Vector2D temp2;
+	temp2.x = 10;
+	temp2.y = 10;
 
-	std::cout << temp << std::endl;*/
-	std::cout << NextPow2(999) << std::endl;
+	Vector2D temp3	= temp1.Lerp(temp2, 1);
+	std::cout << temp3.x << temp3.y << std::endl;
 	system("pause");
 }

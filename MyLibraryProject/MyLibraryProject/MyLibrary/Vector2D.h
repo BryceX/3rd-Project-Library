@@ -1,6 +1,6 @@
 #pragma once
 #include <cmath>
-
+//ALL DONE
 class Vector2D
 {
 public:
@@ -10,22 +10,30 @@ public:
 	float x;
 	float y;
 
+	//done
 	Vector2D Lerp(Vector2D a_pos0, float percentValue);
 	//done
 	float Magnitude();
+	//done
 	void Normalize();
+	//done
 	float DotProduct(Vector2D dotProductVector);
-
+	//done
 	Vector2D operator + (Vector2D anotherVector);
+	//done
 	Vector2D operator - (Vector2D anotherVector);
+	//done
 	Vector2D operator * (float anotherFloat);
-	Vector2D operator / (float anotherFloat);
-	Vector2D& operator = (Vector2D anotherVector);
-	bool operator == (Vector2D anotherVector);
+	//done
+	void operator = (Vector2D anotherVector);
+	//done
+	bool operator == (Vector2D anotherVector); // thing.operator==(otherThing)
+	//done
 	Vector2D& operator += (Vector2D anotherVector);
+	//done
 	Vector2D& operator -= (Vector2D anotherVector);
-
-	friend bool operator == (Vector2D leftVector, Vector2D rightVector);
+	//done
+	friend bool operator == (const Vector2D &leftVector, const Vector2D &rightVector); // operator==(thing, otherThing)
 	Vector2D();
 	~Vector2D();
 };

@@ -21,11 +21,11 @@ public:
 	Vector3D operator * (float anotherFloat);
 	Vector3D operator / (float anotherFloat);
 	Vector3D& operator = (float anotherFloat);
-	Vector3D& operator = (Vector3D anotherVector);
+	void operator = (Vector3D anotherVector);
 	bool operator == (Vector3D anotherVector);
 	Vector3D& operator += (Vector3D anotherVector);
 	Vector3D& operator -= (Vector3D anotherVector);
-	
+	friend bool operator == (Vector3D leftVector, Vector3D rightVector);
 	Vector3D(float a_x, float a_y, float a_z)
 	{
 		x = a_x; y = a_y; z = a_z;

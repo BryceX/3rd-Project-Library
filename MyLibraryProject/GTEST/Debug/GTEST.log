@@ -1,13 +1,23 @@
-﻿Build started 12/10/2014 10:35:53 AM.
-     1>Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\GTEST\GTEST.vcxproj" on node 2 (Build target(s)).
-     1>Link:
+﻿Build started 12/15/2014 5:53:37 PM.
+     1>Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\GTEST\GTEST.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GTEST.cpp stdafx.cpp
+         stdafx.cpp
+         GTEST.cpp
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(11): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(18): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(24): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(54): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(197): warning C4305: 'argument' : truncation from 'double' to 'float'
+         Generating Code...
+       Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\GTEST.exe" /INCREMENTAL /NOLOGO gtestd.lib MyLibraryProject.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\GTEST.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\GTEST.lib" /MACHINE:X86 Debug\GTEST.obj
          Debug\stdafx.obj
          GTEST.vcxproj -> C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\GTEST.exe
        PostBuildEvent:
          C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\GTEST.exe
          :VCEnd
-         [==========] Running 6 tests from 2 test cases.
+         [==========] Running 20 tests from 3 test cases.
          [----------] Global test environment set-up.
          [----------] 4 tests from mylibrary
          [ RUN      ] mylibrary.lerp
@@ -17,21 +27,52 @@
          [ RUN      ] mylibrary.radiansToDegs
          [       OK ] mylibrary.radiansToDegs (0 ms)
          [ RUN      ] mylibrary.pow2
-         [       OK ] mylibrary.pow2 (1 ms)
-         [----------] 4 tests from mylibrary (1 ms total)
+         [       OK ] mylibrary.pow2 (0 ms)
+         [----------] 4 tests from mylibrary (0 ms total)
          
-         [----------] 2 tests from vec2d
+         [----------] 12 tests from vec2d
          [ RUN      ] vec2d.lerp
          [       OK ] vec2d.lerp (0 ms)
          [ RUN      ] vec2d.mag
          [       OK ] vec2d.mag (0 ms)
-         [----------] 2 tests from vec2d (0 ms total)
+         [ RUN      ] vec2d.norm
+         [       OK ] vec2d.norm (0 ms)
+         [ RUN      ] vec2d.dotP
+         [       OK ] vec2d.dotP (0 ms)
+         [ RUN      ] vec2d.opAdd
+         [       OK ] vec2d.opAdd (0 ms)
+         [ RUN      ] vec2d.opSub
+         [       OK ] vec2d.opSub (0 ms)
+         [ RUN      ] vec2d.opMulti
+         [       OK ] vec2d.opMulti (1 ms)
+         [ RUN      ] vec2d.opEqual
+         [       OK ] vec2d.opEqual (0 ms)
+         [ RUN      ] vec2d.opIsEqual
+         [       OK ] vec2d.opIsEqual (0 ms)
+         [ RUN      ] vec2d.opPlusEqual
+         [       OK ] vec2d.opPlusEqual (0 ms)
+         [ RUN      ] vec2d.opMinusEqual
+         [       OK ] vec2d.opMinusEqual (0 ms)
+         [ RUN      ] vec2d.opIsEqualFriend
+         [       OK ] vec2d.opIsEqualFriend (0 ms)
+         [----------] 12 tests from vec2d (1 ms total)
+         
+         [----------] 4 tests from vec3d
+         [ RUN      ] vec3d.lerp
+         [       OK ] vec3d.lerp (0 ms)
+         [ RUN      ] vec3d.mag
+         [       OK ] vec3d.mag (0 ms)
+         [ RUN      ] vec3d.norm
+         [       OK ] vec3d.norm (0 ms)
+         [ RUN      ] vec3d.dotP
+         [       OK ] vec3d.dotP (0 ms)
+         [----------] 4 tests from vec3d (0 ms total)
          
          [----------] Global test environment tear-down
-         [==========] 6 tests from 2 test cases ran. (1 ms total)
-         [  PASSED  ] 6 tests.
-     1>Done Building Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\GTEST\GTEST.vcxproj" (Build target(s)).
+         [==========] 20 tests from 3 test cases ran. (2 ms total)
+         [  PASSED  ] 20 tests.
+     1>Done Building Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\GTEST\GTEST.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.40
+Time Elapsed 00:00:01.15

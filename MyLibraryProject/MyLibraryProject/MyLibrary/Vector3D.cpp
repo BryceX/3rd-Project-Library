@@ -7,9 +7,7 @@ Vector3D::Vector3D()
 Vector3D Vector3D::Lerp(Vector3D end, float t)
 {
 	Vector3D temp;
-	Vector3D start;
-	start = *this;
-	temp = start + (end - start) * t;
+	temp = *this + ((end - *this) * t);
 	return temp;
 }
 float Vector3D::Magnitude()
@@ -18,9 +16,17 @@ float Vector3D::Magnitude()
 }
 void Vector3D::Normalize()
 {
-	x = x / Magnitude();
-	y = y / Magnitude();
-	z = z / Magnitude();
+	float mag = Magnitude();
+	if (mag == 0) {
+		x = 0.f;
+		y = 0.f;
+		z = 0.f;
+	}
+	else {
+		x = x / Magnitude();
+		y = y / Magnitude();
+		z = z / Magnitude();
+	}
 }
 float Vector3D::CrossProduct(Vector3D crossProductVector)
 {
@@ -69,13 +75,11 @@ Vector3D Vector3D::operator * (float anotherFloat)
 	temp.z = z * anotherFloat;
 	return temp;
 }
-Vector3D& Vector3D::operator = (Vector3D anotherVector)
+void Vector3D::operator = (Vector3D anotherVector)
 {
-	Vector3D temp;
-	temp.x = anotherVector.x;
-	temp.y = anotherVector.y;
-	temp.z = anotherVector.z;
-	return temp;
+	x = anotherVector.x;
+	y = anotherVector.y;
+	z = anotherVector.z;
 }
 Vector3D& Vector3D::operator = (float anotherFloat)
 {
@@ -106,6 +110,19 @@ Vector3D& Vector3D::operator -= (Vector3D anotherVector)
 {
 	*this = *this - anotherVector;
 	return *this;
+}
+bool operator==(Vector3D leftVector, Vector3D rightVector)
+{
+	if (leftVector.x == rightVector.x)
+	{
+		if (leftVector.y == rightVector.y)
+		{
+			if (leftVector.z == rightVector.z)
+			{
+				return true;
+			}
+		}
+	}
 }
 std::ostream& operator<<(std::ostream& os, const Vector3D& dt)
 {

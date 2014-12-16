@@ -14,17 +14,24 @@ Vector2D::Vector2D(float a_x, float a_y)
 Vector2D Vector2D::Lerp(Vector2D end, float percentValue)
 {
 	Vector2D temp;
-	temp = *this + (end - *this) * percentValue;
+	temp = *this + ((end - *this) * percentValue);
 	return temp;
 }
 float Vector2D::Magnitude()
 {
-	return sqrt(pow(x,2) + pow(y,2));
+	return sqrt( (x * x) + (y * y) );
 }
 void Vector2D::Normalize()
 {
-	x = x / Magnitude();
-	y = y / Magnitude();
+	float mag = Magnitude();
+	if (mag == 0) {
+		x = 0.f;
+		y = 0.f;
+	}
+	else {
+		x = x / Magnitude();
+		y = y / Magnitude();
+	}
 }
 
 
@@ -60,46 +67,45 @@ Vector2D Vector2D::operator* (float anotherFloat)
 	return temp;
 }
 
-Vector2D& Vector2D::operator= (Vector2D anotherVector)
+void Vector2D::operator= (Vector2D anotherVector)
 {
-	Vector2D temp;
-	temp.x = anotherVector.x;
-	temp.y = anotherVector.y;
-	return temp;
+	x = anotherVector.x;
+	y = anotherVector.y;
 }
 bool Vector2D::operator == (Vector2D anotherVector)
 {
-	
-	if (x == anotherVector.x)
-	{
-		if (y == anotherVector.y)
-		{
-			return true;
-		}
+	if (x - anotherVector.x < 0.00001f && y - anotherVector.y < 0.00001f) {
+		return true;
 	}
-	
 	return false;
 
 }
-
-bool operator==(Vector2D leftVector, Vector2D rightVector)
-{
-	if (leftVector.x == rightVector.x)
-	{
-		if (leftVector.y == rightVector.y)
-		{
-			return true;
-		}
-	}
-}
-
 Vector2D& Vector2D::operator+= (Vector2D anotherVector)
 {
-	 *this = *this + anotherVector;
-	 return *this;
+	*this = *this + anotherVector;
+	return *this;
 }
 Vector2D& Vector2D::operator-= (Vector2D anotherVector)
 {
 	*this = *this - anotherVector;
 	return *this;
 }
+bool operator==(const Vector2D &leftVector, const Vector2D &rightVector)
+{
+	if (&leftVector == &rightVector) { return true; }
+	if (leftVector.x - rightVector.x < 0.00001f && leftVector.y - rightVector.y < 0.00001f) {
+		return true;
+	}
+	return false;
+
+}
+
+/*
+
+vector2d.operator==(vector2d)
+vector2d == vector2d
+
+operator==( vector2d, vector2d )
+
+
+*/
