@@ -10,7 +10,7 @@ public:
 	float x;
 	float y;
 
-	//done
+	//must recheck
 	Vector2D Lerp(Vector2D a_pos0, float percentValue);
 	//done
 	float Magnitude();

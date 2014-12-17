@@ -1,4 +1,4 @@
-﻿Build started 12/15/2014 5:53:35 PM.
+﻿Build started 12/16/2014 4:45:42 PM.
      1>Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\MyLibraryProject\MyLibraryProject.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MyLibrary\Matrices3x3.cpp MyLibrary\Matrices4x4.cpp MyLibrary\MyLibrary.cpp MyLibrary\Vector2D.cpp MyLibrary\Vector3D.cpp MyLibrary\Vector4D.cpp
@@ -8,7 +8,7 @@
      1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\mylibraryproject\mylibrary\vector4d.cpp(19): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
      1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\mylibraryproject\mylibrary\vector4d.cpp(20): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
          Vector3D.cpp
-     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\mylibraryproject\mylibrary\vector3d.cpp(90): warning C4172: returning address of local variable or temporary
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\mylibraryproject\mylibrary\vector3d.cpp(98): warning C4172: returning address of local variable or temporary
          Vector2D.cpp
          MyLibrary.cpp
      1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\mylibraryproject\mylibrary\mylibrary.cpp(9): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
@@ -16,7 +16,8 @@
          Matrices4x4.cpp
          Matrices3x3.cpp
          Generating Code...
-     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\mylibraryproject\mylibrary\vector3d.cpp(126): warning C4715: 'operator==' : not all control paths return a value
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\mylibraryproject\mylibrary\vector3d.cpp(135): warning C4715: 'operator==' : not all control paths return a value
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\mylibraryproject\mylibrary\vector4d.cpp(97): warning C4715: 'operator==' : not all control paths return a value
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\MyLibraryProject.lib" /NOLOGO Debug\Matrices3x3.obj
          Debug\Matrices4x4.obj

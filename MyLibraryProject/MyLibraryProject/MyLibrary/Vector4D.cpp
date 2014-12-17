@@ -70,3 +70,28 @@ Vector4D Vector4D::operator = (Vector4D anotherVector)
 	temp.z = anotherVector.z;
 	return temp;
 }
+bool Vector4D::operator == (Vector4D anotherVector)
+{
+	if (x - anotherVector.x < .00001 &&
+		y - anotherVector.y < .00001 && z - anotherVector.z < .00001 && w - anotherVector.w < .00001)
+	{
+		return true;
+	}
+	else return false;
+}
+bool operator==(Vector4D leftVector, Vector4D rightVector)
+{
+	if (leftVector.x == rightVector.x)
+	{
+		if (leftVector.y == rightVector.y)
+		{
+			if (leftVector.z == rightVector.z)
+			{
+				if (leftVector.w == rightVector.w)
+				{
+					return true;
+				}
+			}
+		}
+	}
+}

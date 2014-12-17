@@ -1,4 +1,4 @@
-﻿Build started 12/15/2014 5:53:37 PM.
+﻿Build started 12/16/2014 4:45:43 PM.
      1>Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\GTEST\GTEST.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GTEST.cpp stdafx.cpp
@@ -7,6 +7,7 @@
      1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(11): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(18): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(24): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(45): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(54): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(197): warning C4305: 'argument' : truncation from 'double' to 'float'
          Generating Code...
@@ -17,7 +18,7 @@
        PostBuildEvent:
          C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\GTEST.exe
          :VCEnd
-         [==========] Running 20 tests from 3 test cases.
+         [==========] Running 46 tests from 5 test cases.
          [----------] Global test environment set-up.
          [----------] 4 tests from mylibrary
          [ RUN      ] mylibrary.lerp
@@ -36,7 +37,7 @@
          [ RUN      ] vec2d.mag
          [       OK ] vec2d.mag (0 ms)
          [ RUN      ] vec2d.norm
-         [       OK ] vec2d.norm (0 ms)
+         [       OK ] vec2d.norm (1 ms)
          [ RUN      ] vec2d.dotP
          [       OK ] vec2d.dotP (0 ms)
          [ RUN      ] vec2d.opAdd
@@ -44,7 +45,7 @@
          [ RUN      ] vec2d.opSub
          [       OK ] vec2d.opSub (0 ms)
          [ RUN      ] vec2d.opMulti
-         [       OK ] vec2d.opMulti (1 ms)
+         [       OK ] vec2d.opMulti (0 ms)
          [ RUN      ] vec2d.opEqual
          [       OK ] vec2d.opEqual (0 ms)
          [ RUN      ] vec2d.opIsEqual
@@ -57,7 +58,7 @@
          [       OK ] vec2d.opIsEqualFriend (0 ms)
          [----------] 12 tests from vec2d (1 ms total)
          
-         [----------] 4 tests from vec3d
+         [----------] 17 tests from vec3d
          [ RUN      ] vec3d.lerp
          [       OK ] vec3d.lerp (0 ms)
          [ RUN      ] vec3d.mag
@@ -66,13 +67,71 @@
          [       OK ] vec3d.norm (0 ms)
          [ RUN      ] vec3d.dotP
          [       OK ] vec3d.dotP (0 ms)
-         [----------] 4 tests from vec3d (0 ms total)
+         [ RUN      ] vec3d.opAdd
+         [       OK ] vec3d.opAdd (0 ms)
+         [ RUN      ] vec3d.opSub
+         [       OK ] vec3d.opSub (0 ms)
+         [ RUN      ] vec3d.opMulti
+         [       OK ] vec3d.opMulti (0 ms)
+         [ RUN      ] vec3d.opEqual
+         [       OK ] vec3d.opEqual (0 ms)
+         [ RUN      ] vec3d.opIsEqual
+         [       OK ] vec3d.opIsEqual (0 ms)
+         [ RUN      ] vec3d.opPlusEqual
+         [       OK ] vec3d.opPlusEqual (0 ms)
+         [ RUN      ] vec3d.opMinusEqual
+         [       OK ] vec3d.opMinusEqual (0 ms)
+         [ RUN      ] vec3d.opIsEqualFriend
+         [       OK ] vec3d.opIsEqualFriend (1 ms)
+         [ RUN      ] vec3d.opAddF
+         [       OK ] vec3d.opAddF (0 ms)
+         [ RUN      ] vec3d.opSubF
+         [       OK ] vec3d.opSubF (0 ms)
+         [ RUN      ] vec3d.opMultiF
+         [       OK ] vec3d.opMultiF (0 ms)
+         [ RUN      ] vec3d.opDivF
+         [       OK ] vec3d.opDivF (0 ms)
+         [ RUN      ] vec3d.opEqualsF
+         [       OK ] vec3d.opEqualsF (0 ms)
+         [----------] 17 tests from vec3d (1 ms total)
+         
+         [----------] 6 tests from vec4d
+         [ RUN      ] vec4d.mag
+         [       OK ] vec4d.mag (0 ms)
+         [ RUN      ] vec4d.norm
+         [       OK ] vec4d.norm (0 ms)
+         [ RUN      ] vec4d.opAdd
+         [       OK ] vec4d.opAdd (0 ms)
+         [ RUN      ] vec4d.opSub
+         [       OK ] vec4d.opSub (0 ms)
+         [ RUN      ] vec4d.opMultiF
+         [       OK ] vec4d.opMultiF (0 ms)
+         [ RUN      ] vec4d.opEqual
+         [       OK ] vec4d.opEqual (0 ms)
+         [----------] 6 tests from vec4d (0 ms total)
+         
+         [----------] 7 tests from M3x3
+         [ RUN      ] M3x3.fill
+         [       OK ] M3x3.fill (0 ms)
+         [ RUN      ] M3x3.transpose
+         [       OK ] M3x3.transpose (0 ms)
+         [ RUN      ] M3x3.translate
+         [       OK ] M3x3.translate (0 ms)
+         [ RUN      ] M3x3.rotate
+         [       OK ] M3x3.rotate (0 ms)
+         [ RUN      ] M3x3.scale
+         [       OK ] M3x3.scale (0 ms)
+         [ RUN      ] M3x3.opMulti
+         [       OK ] M3x3.opMulti (0 ms)
+         [ RUN      ] M3x3.opEqual
+         [       OK ] M3x3.opEqual (0 ms)
+         [----------] 7 tests from M3x3 (0 ms total)
          
          [----------] Global test environment tear-down
-         [==========] 20 tests from 3 test cases ran. (2 ms total)
-         [  PASSED  ] 20 tests.
+         [==========] 46 tests from 5 test cases ran. (3 ms total)
+         [  PASSED  ] 46 tests.
      1>Done Building Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\GTEST\GTEST.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.15
+Time Elapsed 00:00:01.29

@@ -38,7 +38,7 @@ void Matrix3x3::Transpose()
 	*this = temp;
 }
 
-void Matrix3x3::SetTranslate(Vector3D vector)
+Matrix3x3 Matrix3x3::SetTranslate(Vector3D vector)
 {
 	Matrix3x3 transformMatrix;
 	transformMatrix.matrix[0][0] = 1;
@@ -50,23 +50,23 @@ void Matrix3x3::SetTranslate(Vector3D vector)
 	transformMatrix.matrix[0][2] = 0;
 	transformMatrix.matrix[1][2] = 0;
 	transformMatrix.matrix[2][2] = vector.z;
-	*this = transformMatrix;
+	return transformMatrix;
 }
-void Matrix3x3::SetRotate(Vector3D vector, float degrees)
+Matrix3x3 Matrix3x3::SetRotate(Vector3D vector, float radians)
 {
 	Matrix3x3 transformMatrix;
-	transformMatrix.matrix[0][0] = cos(degrees);
-	transformMatrix.matrix[1][0] = -sin(degrees);
-	transformMatrix.matrix[2][0] = 0;
-	transformMatrix.matrix[0][1] = sin(degrees);
-	transformMatrix.matrix[1][1] = cos(degrees);
-	transformMatrix.matrix[2][1] = 0;
+	transformMatrix.matrix[0][0] = cos(radians);
+	transformMatrix.matrix[1][0] = -sin(radians);
+	transformMatrix.matrix[2][0] = vector.x;
+	transformMatrix.matrix[0][1] = sin(radians);
+	transformMatrix.matrix[1][1] = cos(radians);
+	transformMatrix.matrix[2][1] = vector.y;
 	transformMatrix.matrix[0][2] = 0;
 	transformMatrix.matrix[1][2] = 0;
-	transformMatrix.matrix[2][2] = 1;
-	return;
+	transformMatrix.matrix[2][2] = vector.z;
+	return transformMatrix;
 }
-void Matrix3x3::SetScale(Vector3D scaleNumber)
+Matrix3x3 Matrix3x3::SetScale(Vector3D scaleNumber)
 {
 	Matrix3x3 scaleMatrix;
 	scaleMatrix.matrix[0][0] = scaleNumber.x;
@@ -78,7 +78,7 @@ void Matrix3x3::SetScale(Vector3D scaleNumber)
 	scaleMatrix.matrix[0][2] = 0;
 	scaleMatrix.matrix[1][2] = 0;
 	scaleMatrix.matrix[2][2] = scaleNumber.z;
-	return;
+	return scaleMatrix;
 }
 
 
@@ -88,19 +88,19 @@ Matrix3x3::~Matrix3x3()
 Matrix3x3 Matrix3x3::operator *(Matrix3x3 anotherMatrix)
 {
 	Matrix3x3 temp;
-	temp.matrix[0][0] = (matrix[0][0] * anotherMatrix.matrix[0][0]) + (matrix[0][1] * anotherMatrix.matrix[1][0]) + (matrix[0][2] * anotherMatrix.matrix[2][0]);
-	temp.matrix[0][1] = (matrix[0][0] * anotherMatrix.matrix[0][1]) + (matrix[0][1] * anotherMatrix.matrix[1][1]) + (matrix[0][2] * anotherMatrix.matrix[2][1]);
-	temp.matrix[0][2] = (matrix[0][0] * anotherMatrix.matrix[0][2]) + (matrix[0][1] * anotherMatrix.matrix[1][2]) + (matrix[0][2] * anotherMatrix.matrix[2][2]);
-	temp.matrix[1][0] = (matrix[1][0] * anotherMatrix.matrix[0][0]) + (matrix[1][1] * anotherMatrix.matrix[1][0]) + (matrix[1][2] * anotherMatrix.matrix[2][0]);
-	temp.matrix[1][1] = (matrix[1][0] * anotherMatrix.matrix[0][1]) + (matrix[1][1] * anotherMatrix.matrix[1][1]) + (matrix[1][2] * anotherMatrix.matrix[2][1]);
-	temp.matrix[1][2] = (matrix[1][0] * anotherMatrix.matrix[0][2]) + (matrix[1][1] * anotherMatrix.matrix[1][2]) + (matrix[1][2] * anotherMatrix.matrix[2][2]);
-	temp.matrix[2][0] = (matrix[2][0] * anotherMatrix.matrix[0][0]) + (matrix[2][1] * anotherMatrix.matrix[1][0]) + (matrix[2][2] * anotherMatrix.matrix[2][0]);
-	temp.matrix[2][1] = (matrix[2][0] * anotherMatrix.matrix[0][1]) + (matrix[2][1] * anotherMatrix.matrix[1][1]) + (matrix[2][2] * anotherMatrix.matrix[2][1]);
-	temp.matrix[2][2] = (matrix[2][0] * anotherMatrix.matrix[0][2]) + (matrix[2][1] * anotherMatrix.matrix[1][2]) + (matrix[2][2] * anotherMatrix.matrix[2][2]);
+	temp.matrix[0][0] = (matrix[0][0] * anotherMatrix.matrix[0][0]) + (matrix[1][0] * anotherMatrix.matrix[0][1]) + (matrix[2][0] * anotherMatrix.matrix[0][2]);
+	temp.matrix[1][0] = (matrix[0][0] * anotherMatrix.matrix[1][0]) + (matrix[1][0] * anotherMatrix.matrix[1][1]) + (matrix[2][0] * anotherMatrix.matrix[1][2]);
+	temp.matrix[2][0] = (matrix[0][0] * anotherMatrix.matrix[2][0]) + (matrix[1][0] * anotherMatrix.matrix[2][1]) + (matrix[2][0] * anotherMatrix.matrix[2][2]);
+	temp.matrix[0][1] = (matrix[0][1] * anotherMatrix.matrix[0][0]) + (matrix[1][1] * anotherMatrix.matrix[0][1]) + (matrix[2][1] * anotherMatrix.matrix[0][2]);
+	temp.matrix[1][1] = (matrix[0][1] * anotherMatrix.matrix[1][0]) + (matrix[1][1] * anotherMatrix.matrix[1][1]) + (matrix[2][1] * anotherMatrix.matrix[1][2]);
+	temp.matrix[2][1] = (matrix[0][1] * anotherMatrix.matrix[2][0]) + (matrix[1][1] * anotherMatrix.matrix[2][1]) + (matrix[2][1] * anotherMatrix.matrix[2][2]);
+	temp.matrix[0][2] = (matrix[0][2] * anotherMatrix.matrix[0][0]) + (matrix[1][2] * anotherMatrix.matrix[0][1]) + (matrix[2][2] * anotherMatrix.matrix[0][2]);
+	temp.matrix[1][2] = (matrix[0][2] * anotherMatrix.matrix[1][0]) + (matrix[1][2] * anotherMatrix.matrix[1][1]) + (matrix[2][2] * anotherMatrix.matrix[1][2]);
+	temp.matrix[2][2] = (matrix[0][2] * anotherMatrix.matrix[2][0]) + (matrix[1][2] * anotherMatrix.matrix[2][1]) + (matrix[2][2] * anotherMatrix.matrix[2][2]);
 	return temp;
 }
 
-Matrix3x3 Matrix3x3::operator = (Matrix3x3 anotherMatrix)
+void Matrix3x3::operator = (Matrix3x3 anotherMatrix)
 {
 	matrix[0][0] = anotherMatrix.matrix[0][0];
 	matrix[0][1] = anotherMatrix.matrix[0][1];
@@ -111,7 +111,40 @@ Matrix3x3 Matrix3x3::operator = (Matrix3x3 anotherMatrix)
 	matrix[2][0] = anotherMatrix.matrix[2][0];
 	matrix[2][1] = anotherMatrix.matrix[2][1];
 	matrix[2][2] = anotherMatrix.matrix[2][2];
-	return *this;
+}
+bool Matrix3x3::operator == (Matrix3x3 anotherMatrix)
+{
+	if (matrix[0][0] - anotherMatrix.matrix[0][0] < .00001 &&
+		matrix[0][1] - anotherMatrix.matrix[0][1] < .00001 &&
+		matrix[0][2] - anotherMatrix.matrix[0][2] < .00001 &&
+		matrix[1][0] - anotherMatrix.matrix[1][0] < .00001 &&
+		matrix[1][1] - anotherMatrix.matrix[1][1] < .00001 &&
+		matrix[1][2] - anotherMatrix.matrix[1][2] < .00001 &&
+		matrix[2][0] - anotherMatrix.matrix[2][0] < .00001 &&
+		matrix[2][1] - anotherMatrix.matrix[2][1] < .00001 &&
+		matrix[2][2] - anotherMatrix.matrix[2][2] < .00001)
+	{
+		return true;
+	}
+	else return false;
+}
+bool operator==(Matrix3x3 leftMatrix, Matrix3x3 rightMatrix)
+{
+	// @BryceX: look into using a double for loop
+
+	if (leftMatrix.matrix[0][0] - rightMatrix.matrix[0][0]< .00001 &&
+		leftMatrix.matrix[1][0] - rightMatrix.matrix[1][0]< .00001 &&
+		leftMatrix.matrix[2][0] - rightMatrix.matrix[2][0]< .00001 &&
+		leftMatrix.matrix[0][1] - rightMatrix.matrix[0][1]< .00001 &&
+		leftMatrix.matrix[1][1] - rightMatrix.matrix[1][1]< .00001 &&
+		leftMatrix.matrix[2][1] - rightMatrix.matrix[2][1]< .00001 &&
+		leftMatrix.matrix[0][2] - rightMatrix.matrix[0][2]< .00001 &&
+		leftMatrix.matrix[1][2] - rightMatrix.matrix[1][2]< .00001 &&
+		leftMatrix.matrix[2][2] - rightMatrix.matrix[2][2]< .00001)
+	{
+		return true;
+	}
+	else return false;
 }
 /*
 Matrix3x3 Matrix3x3::operator * (Vector3D vector)

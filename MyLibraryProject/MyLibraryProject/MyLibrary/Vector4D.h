@@ -6,17 +6,23 @@ public:
 	float y;
 	float z;
 	float w;
-
+	//done
 	float Magnitude();
+	//recheck
 	void Normalize();
-	
-
+	//done
 	Vector4D operator + (Vector4D anotherVector);
+	//done
 	Vector4D operator - (Vector4D anotherVector);
+	//done
 	Vector4D operator * (float anotherFloat);
-	Vector4D operator / (float anotherFloat);
+	
+	
 	Vector4D operator = (Vector4D anotherVector);
-	Vector4D operator == (Vector4D anotherVector);
+	//not implemented
+	Vector4D operator / (float anotherFloat);
+	bool operator == (Vector4D anotherVector);
+	friend bool operator == (Vector4D leftVector, Vector4D rightVector);
 	Vector4D operator += (Vector4D anotherVector);
 	Vector4D operator -= (Vector4D anotherVector);
 

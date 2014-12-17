@@ -67,6 +67,14 @@ Vector3D Vector3D::operator + (float anotherFloat)
 	temp.z = z + anotherFloat;
 	return temp;
 }
+Vector3D Vector3D::operator - (float anotherFloat)
+{
+	Vector3D temp;
+	temp.x = x - anotherFloat;
+	temp.y = y - anotherFloat;
+	temp.z = z - anotherFloat;
+	return temp;
+}
 Vector3D Vector3D::operator * (float anotherFloat)
 {
 	Vector3D temp;
@@ -95,7 +103,8 @@ Vector3D& Vector3D::operator = (float anotherFloat)
 bool Vector3D::operator == (Vector3D anotherVector)
 {
 	if (x - anotherVector.x < .00001 &&
-		y - anotherVector.y < .00001)
+		y - anotherVector.y < .00001 &&
+		z - anotherVector.z < .00001)
 	{
 		return true;
 	}
