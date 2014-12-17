@@ -8,14 +8,14 @@ public:
 	float x;
 	float y;
 	float z;
-	//incomplete
+	//done
 	Vector3D Lerp(Vector3D end, float t);
 	//done
 	float Magnitude();
-	//inc
+	//done
 	void Normalize();
 	//inc
-	float CrossProduct(Vector3D crossProductVector);
+	Vector3D CrossProduct(Vector3D crossProductVector);
 	//done
 	float DotProduct(Vector3D dotProductVector);
 	//done
@@ -23,24 +23,26 @@ public:
 	//done
 	Vector3D operator - (Vector3D anotherVector);
 	//done
-	
 	Vector3D& operator += (Vector3D anotherVector);
-	//recheck
-	Vector3D& operator -= (Vector3D anotherVector);
+	//done
+	Vector3D& operator -= (Vector3D anotherVector);	
+	//done
+	friend bool operator == (const Vector3D &leftVector, const Vector3D &rightVector);
+	//done
+	Vector3D operator + (float anotherFloat);
+	//done
+	Vector3D operator - (float anotherFloat);
+	//done
+	Vector3D operator * (float anotherFloat);
+	//done
+	Vector3D operator / (float anotherFloat);
 	//done
 	void operator = (Vector3D anotherVector);
 	//done
-	bool operator == (Vector3D anotherVector);
-	//recheck
-	friend bool operator == (Vector3D leftVector, Vector3D rightVector);
-	//done
-	Vector3D operator + (float anotherFloat);
-	//
-	Vector3D operator - (float anotherFloat);
-	//
-	Vector3D operator * (float anotherFloat);
-	Vector3D operator / (float anotherFloat);
 	Vector3D& operator = (float anotherFloat);
+	//done
+	bool operator == (Vector3D anotherVector);
+	
 	Vector3D(float a_x, float a_y, float a_z)
 	{
 		x = a_x; y = a_y; z = a_z;

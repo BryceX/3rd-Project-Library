@@ -17,11 +17,13 @@ public:
 	//done
 	Vector4D operator * (float anotherFloat);
 	
-	
+	//done
 	Vector4D operator = (Vector4D anotherVector);
 	//not implemented
 	Vector4D operator / (float anotherFloat);
+	//done
 	bool operator == (Vector4D anotherVector);
+	//done
 	friend bool operator == (Vector4D leftVector, Vector4D rightVector);
 	Vector4D operator += (Vector4D anotherVector);
 	Vector4D operator -= (Vector4D anotherVector);

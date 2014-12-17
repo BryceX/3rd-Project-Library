@@ -40,10 +40,9 @@ TEST(vec2d, lerp)
 	testingVector1.x = 10;
 	testingVector1.y = 10;
 	Vector2D expected;
-	expected.x = 5;//something not right here
+	expected.x = 5;
 	expected.y = 5;
-	Vector2D v3 = testingVector0.Lerp(testingVector1, .9);
-	EXPECT_EQ(expected, v3);
+	EXPECT_EQ(expected, testingVector0.Lerp(testingVector1, .5));
 }
 TEST(vec2d, mag)
 {
@@ -169,7 +168,7 @@ TEST(vec2d, opIsEqualFriend)
 	EXPECT_TRUE(testingVector0.operator==(testingVector1));
 	EXPECT_EQ(testingVector0, testingVector1);
 }
-//vector3d tests  CURRENTLY WORKING ON
+//vector3d tests 
 
 TEST(vec3d, lerp)
 {
@@ -199,16 +198,15 @@ TEST(vec3d, mag)
 TEST(vec3d, norm)
 {
 	Vector3D testingVector = Vector3D();
-	testingVector.x = 1;
-	testingVector.y = 0;
-	testingVector.z = 9;
-	testingVector.Magnitude();
+	testingVector.x = 2;
+	testingVector.y = 5;
+	testingVector.z = 7;
 	testingVector.Normalize();
-	EXPECT_FLOAT_EQ(0.11043152607f, testingVector.x);
-	EXPECT_FLOAT_EQ(0.f, testingVector.y);
-	EXPECT_FLOAT_EQ(testingVector.z, testingVector.z);
+	EXPECT_FLOAT_EQ(0.22645540682f, testingVector.x);
+	EXPECT_FLOAT_EQ(0.56613851707f, testingVector.y);
+	EXPECT_FLOAT_EQ(0.7925939239f, testingVector.z);
 }
-/*
+
 TEST(vec3d, crossP)
 {
 	Vector3D testingVector0;
@@ -223,9 +221,9 @@ TEST(vec3d, crossP)
 	result.x = -2;
 	result.y = 7; //should be correct. dont know how to check values of my vector in google test
 	result.z = -5;
-	EXPECT_EQ(result, testingVector0.DotProduct(testingVector1));
+	EXPECT_EQ(result, testingVector0.CrossProduct(testingVector1));
 }
-*/
+
 TEST(vec3d, dotP)
 {
 	Vector3D testVec0;
@@ -368,11 +366,11 @@ TEST(vec3d, opAddF)
 	testingVector0.x = 1;
 	testingVector0.y = 1;
 	testingVector0.z = 1;
-	float testFloat = 9; //something not working here
+	float testFloat = 9;
 	Vector3D testingVector1;
-	testingVector1.x = 4;
-	testingVector1.y = 4;
-	testingVector1.z = 6;
+	testingVector1.x = 10;
+	testingVector1.y = 10;
+	testingVector1.z = 10;
 	EXPECT_EQ(testingVector1, (testingVector0 + testFloat));
 }
 TEST(vec3d, opSubF)
@@ -382,10 +380,10 @@ TEST(vec3d, opSubF)
 	testingVector0.y = 1;
 	testingVector0.z = 1;
 	float testFloat = 3;
-	Vector3D testingVector1; // something not right here
-	testingVector1.x = 0;
-	testingVector1.y = 0;
-	testingVector1.z = 0;
+	Vector3D testingVector1; 
+	testingVector1.x = -2;
+	testingVector1.y = -2;
+	testingVector1.z = -2;
 	EXPECT_EQ(testingVector1, (testingVector0 - testFloat));
 }
 TEST(vec3d, opMultiF)
@@ -395,37 +393,37 @@ TEST(vec3d, opMultiF)
 	testingVector0.y = 1;
 	testingVector0.z = 1;
 	float testFloat = 3;
-	Vector3D testingVector1; // something not right here
-	testingVector1.x = 0;
-	testingVector1.y = 0;
-	testingVector1.z = 0;
-	EXPECT_EQ(testingVector1, (testingVector0 - testFloat));
+	Vector3D testingVector1; 
+	testingVector1.x = 3;
+	testingVector1.y = 3;
+	testingVector1.z = 3;
+	EXPECT_EQ(testingVector1, (testingVector0 * testFloat));
 }
 TEST(vec3d, opDivF)
 {
 	Vector3D testingVector0;
-	testingVector0.x = 1;
-	testingVector0.y = 1;
-	testingVector0.z = 1;
+	testingVector0.x = 3;
+	testingVector0.y = 3;
+	testingVector0.z = 3;
 	float testFloat = 3;
-	Vector3D testingVector1; // something not right here
-	testingVector1.x = 0;
-	testingVector1.y = 0;
-	testingVector1.z = 0;
-	EXPECT_EQ(testingVector1, (testingVector0 - testFloat));
+	Vector3D testingVector1; 
+	testingVector1.x = 1;
+	testingVector1.y = 1;
+	testingVector1.z = 1;
+	EXPECT_EQ(testingVector1, (testingVector0/testFloat));
 }
 TEST(vec3d, opEqualsF)
 {
 	Vector3D testingVector0;
-	testingVector0.x = 1;
-	testingVector0.y = 1;
-	testingVector0.z = 1;
-	float testFloat = 3;
-	Vector3D testingVector1; // something not right here
-	testingVector1.x = 0;
-	testingVector1.y = 0;
-	testingVector1.z = 0;
-	EXPECT_EQ(testingVector1, (testingVector0 - testFloat));
+	testingVector0.x = 0;
+	testingVector0.y = 0;
+	testingVector0.z = 0;
+	float testFloat = 1;
+	Vector3D testingVector1;
+	testingVector1.x = 1;
+	testingVector1.y = 1;
+	testingVector1.z = 1;
+	EXPECT_EQ(testingVector1, (testingVector0 = testFloat));
 }
 //Vector4 tests start here
 TEST(vec4d, mag)
@@ -556,7 +554,7 @@ TEST(M3x3, transpose)
 TEST(M3x3, translate)
 {
 	Matrix3x3 testMatrix0;
-	testMatrix0.FillMatrix(1, 1, 1, 1, 1, 1, 1, 1, 1);
+	testMatrix0.FillMatrix(0,0,0,0,0,0,0,0,0);
 	Matrix3x3 testMatrix1;
 	testMatrix1.matrix[0][0] = 1;
 	testMatrix1.matrix[1][0] = 0;
@@ -571,8 +569,7 @@ TEST(M3x3, translate)
 	translateVector.x = 1;
 	translateVector.y = 1;
 	translateVector.z = 1;
-	testMatrix0.SetTranslate(translateVector);
-	EXPECT_EQ(testMatrix1, testMatrix0);
+	EXPECT_EQ(testMatrix1, testMatrix0.SetTranslate(translateVector));
 }
 TEST(M3x3, rotate)
 {
@@ -622,6 +619,7 @@ TEST(M3x3, opMulti)
 	testMatrix1.FillMatrix(4, 1, 2, 3, 6, 3, 2, 1, 7);
 	Matrix3x3 result;
 	result.FillMatrix(14, 15, 22, 34, 32, 53, 63, 57, 96);
+
 	EXPECT_EQ(result, (testMatrix0*testMatrix1));
 }
 TEST(M3x3, opEqual)
@@ -641,6 +639,11 @@ TEST(M3x3, opIsEqual)
 
 	bool result = (testMatrix0 == testMatrix1);
 	EXPECT_EQ(true, result);
+
+	Matrix3x3 testMatrix2;
+	testMatrix2.FillMatrix(-1,-1,-1,-1,-1,-1,-1,-1,-1);
+
+	EXPECT_FALSE(testMatrix0 == testMatrix2);
 }
 TEST(M3x3, opIsEqualFriend)
 {
@@ -710,10 +713,9 @@ TEST(M4x4, translate)
 	testVector.w = 1;
 	Matrix4x4 result;
 	result.FillMatrix(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
-	testMatrix.SetTranslate(testVector);
-	EXPECT_EQ(result, testMatrix);
+	EXPECT_EQ(result, testMatrix.SetTranslate(testVector));
 }
-TEST(M4x4, )
+TEST(M4x4, rotate)
 {
 	Matrix4x4 testMatrix;
 	testMatrix.FillMatrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
@@ -723,9 +725,66 @@ TEST(M4x4, )
 	testVector.z = 1;
 	testVector.w = 1;
 	Matrix4x4 result;
-	result.FillMatrix(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
-	testMatrix.SetTranslate(testVector);
+	result.FillMatrix(1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1);
+	;
+	EXPECT_EQ(result, testMatrix.SetRotate(testVector, 0));
+}
+TEST(M4x4, scale)
+{
+	Matrix4x4 testMatrix;
+	testMatrix.FillMatrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	Vector4D testVector;
+	testVector.x = 1;
+	testVector.y = 1;
+	testVector.z = 1;
+	testVector.w = 1;
+	Matrix4x4 result;
+	result.FillMatrix(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
+	EXPECT_EQ(result, testMatrix.SetScale(testVector));
+}
+TEST(M4x4, orthoProj)
+{
+	Matrix4x4 testMatrix;
+	testMatrix.FillMatrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	Matrix4x4 result;
+	result.FillMatrix(2,0,0,0,0,2,0,0,0,0,-1,0,3,3,1,1);
+	EXPECT_EQ(result, testMatrix.SetOrthographicProjection(1,2,2,1,2,1));
+}
+TEST(M4x4, opMulti)
+{
+	Matrix4x4 testMatrix0;
+	testMatrix0.FillMatrix(1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4);
+	Matrix4x4 testMatrix1;
+	testMatrix1.FillMatrix(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+	Matrix4x4 result;
+	//result.FillMatrix(4, 4, 4, 4, 8, 8, 8, 8, 12, 12, 12, 12, 16, 16, 16, 16);
+	result.FillMatrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	EXPECT_EQ(result, testMatrix1);
+}
+TEST(M4x4, opEqual)
+{
+	Matrix4x4 testMatrix;
+	testMatrix.FillMatrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	Matrix4x4 result;
+	result = testMatrix;
 	EXPECT_EQ(result, testMatrix);
+}
+TEST(M4x4, opIsEqual)
+{
+	Matrix4x4 testMatrix;
+	testMatrix.FillMatrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	Matrix4x4 result;
+	result = testMatrix;
+	bool secondResult = (result == testMatrix);
+	EXPECT_EQ(true, secondResult);
+}
+TEST(M4x4, opIsEqualFriend)
+{
+	Matrix4x4 testMatrix;
+	testMatrix.FillMatrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	Matrix4x4 result;
+	result = testMatrix;
+	EXPECT_EQ(true, operator==(testMatrix,result));
 }
 
 
@@ -733,7 +792,11 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	::testing::InitGoogleTest(&argc, argv);
 
-	return RUN_ALL_TESTS();
+	int retVal = RUN_ALL_TESTS();
+
+	std::cin.get();
+
+	return retVal;
 }
 
 /*

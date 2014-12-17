@@ -72,8 +72,8 @@ Vector4D Vector4D::operator = (Vector4D anotherVector)
 }
 bool Vector4D::operator == (Vector4D anotherVector)
 {
-	if (x - anotherVector.x < .00001 &&
-		y - anotherVector.y < .00001 && z - anotherVector.z < .00001 && w - anotherVector.w < .00001)
+	if (abs(x - anotherVector.x) < .00001 &&
+		abs(y - anotherVector.y) < .00001 && abs(z - anotherVector.z) < .00001 && abs(w - anotherVector.w) < .00001)
 	{
 		return true;
 	}

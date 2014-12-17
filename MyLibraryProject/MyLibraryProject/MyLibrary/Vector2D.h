@@ -1,6 +1,6 @@
 #pragma once
 #include <cmath>
-//ALL DONE
+
 class Vector2D
 {
 public:
@@ -10,7 +10,7 @@ public:
 	float x;
 	float y;
 
-	//must recheck
+	//done
 	Vector2D Lerp(Vector2D a_pos0, float percentValue);
 	//done
 	float Magnitude();

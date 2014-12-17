@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Vector4D.h"
+#include <cmath>
 class Matrix4x4
 {
 public:
@@ -11,13 +12,20 @@ public:
 	//done
 	void Transpose();
 	//done
-	void SetTranslate(Vector4D vector);
-	void SetRotate(Vector4D vector, float degrees);
-	void SetScale(Vector4D scaleNumber);
-	void SetOrthographicProjection(float leftLimit, float rightLimit, float upperLimit, float lowerLimit, float far, float near);
+	Matrix4x4 SetTranslate(Vector4D vector);
+	//done
+	Matrix4x4 SetRotate(Vector4D vector, float radians);
+	//done
+	Matrix4x4 SetScale(Vector4D scaleNumber);
+	//inc
+	Matrix4x4 SetOrthographicProjection(float leftLimit, float rightLimit, float upperLimit, float lowerLimit, float far, float near);
+	//done
 	Matrix4x4 operator * (Matrix4x4 matrix);
+	//done
 	void operator = (Matrix4x4 anothermatrix);
+	//done
 	bool operator == (Matrix4x4 anotherMatrix);
+	//done
 	friend bool operator == (const Matrix4x4 &leftMatrix, const Matrix4x4 &rightMatrix);
 	~Matrix4x4();
 	friend std::ostream &operator<<(std::ostream &output, const Matrix4x4 &matrix)

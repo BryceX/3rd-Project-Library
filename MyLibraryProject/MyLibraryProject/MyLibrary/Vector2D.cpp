@@ -74,10 +74,10 @@ void Vector2D::operator= (Vector2D anotherVector)
 }
 bool Vector2D::operator == (Vector2D anotherVector)
 {
-	if (x - anotherVector.x < 0.00001f && y - anotherVector.y < 0.00001f) {
+	if (abs(x - anotherVector.x < 0.00001f) && abs(y - anotherVector.y) < 0.00001f) {
 		return true;
 	}
-	return false;
+	else return false;
 
 }
 Vector2D& Vector2D::operator+= (Vector2D anotherVector)
@@ -93,10 +93,10 @@ Vector2D& Vector2D::operator-= (Vector2D anotherVector)
 bool operator==(const Vector2D &leftVector, const Vector2D &rightVector)
 {
 	if (&leftVector == &rightVector) { return true; }
-	if (leftVector.x - rightVector.x < 0.00001f && leftVector.y - rightVector.y < 0.00001f) {
+	if (abs(leftVector.x - rightVector.x) < 0.00001f && abs(leftVector.y - rightVector.y) < 0.00001f) {
 		return true;
 	}
-	return false;
+	else return false;
 
 }
 

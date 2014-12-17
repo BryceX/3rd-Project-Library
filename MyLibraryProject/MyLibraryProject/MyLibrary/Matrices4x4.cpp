@@ -45,7 +45,7 @@ void Matrix4x4::Transpose()
 	temp.matrix[3][3] = matrix[3][3];
 	*this = temp;
 }
-void Matrix4x4::SetTranslate(Vector4D vector)
+Matrix4x4 Matrix4x4::SetTranslate(Vector4D vector)
 {
 	Matrix4x4 transformMatrix;
 	transformMatrix.matrix[0][0] = 1;
@@ -64,30 +64,30 @@ void Matrix4x4::SetTranslate(Vector4D vector)
 	transformMatrix.matrix[1][3] = 0;
 	transformMatrix.matrix[2][3] = 0;
 	transformMatrix.matrix[3][3] = vector.w;
-	*this = transformMatrix;
+	return transformMatrix;
 }
-void Matrix4x4::SetRotate(Vector4D vector, float degrees)
+Matrix4x4 Matrix4x4::SetRotate(Vector4D vector, float radians)
 {
 	Matrix4x4 transformMatrix;
-	transformMatrix.matrix[0][0] = cos(degrees);
-	transformMatrix.matrix[1][0] = -sin(degrees);
+	transformMatrix.matrix[0][0] = cos(radians);
+	transformMatrix.matrix[1][0] = -sin(radians);
 	transformMatrix.matrix[2][0] = 0;
-	transformMatrix.matrix[3][0] = 0;
-	transformMatrix.matrix[0][1] = sin(degrees);
-	transformMatrix.matrix[1][1] = cos(degrees);
+	transformMatrix.matrix[3][0] = vector.x;
+	transformMatrix.matrix[0][1] = sin(radians);
+	transformMatrix.matrix[1][1] = cos(radians);
 	transformMatrix.matrix[2][1] = 0;
-	transformMatrix.matrix[3][1] = 0;
+	transformMatrix.matrix[3][1] = vector.y;
 	transformMatrix.matrix[0][2] = 0;
 	transformMatrix.matrix[1][2] = 0;
 	transformMatrix.matrix[2][2] = 1;
-	transformMatrix.matrix[3][2] = 0;
+	transformMatrix.matrix[3][2] = vector.z;
 	transformMatrix.matrix[0][3] = 0;
 	transformMatrix.matrix[1][3] = 0;
 	transformMatrix.matrix[2][3] = 0;
-	transformMatrix.matrix[3][3] = 1;
-	return;
+	transformMatrix.matrix[3][3] = vector.z;
+	return transformMatrix;
 }
-void Matrix4x4::SetScale(Vector4D scaleNumber)
+Matrix4x4 Matrix4x4::SetScale(Vector4D scaleNumber)
 {
 	Matrix4x4 scaleMatrix;
 	scaleMatrix.matrix[0][0] = scaleNumber.x;
@@ -106,28 +106,68 @@ void Matrix4x4::SetScale(Vector4D scaleNumber)
 	scaleMatrix.matrix[1][3] = 0;
 	scaleMatrix.matrix[2][3] = 0;
 	scaleMatrix.matrix[3][3] = scaleNumber.w;
-	return;
+	return scaleMatrix;
 }
-void Matrix4x4::SetOrthographicProjection(float leftLimit, float rightLimit, float upperLimit, float lowerLimit, float far, float near)
+Matrix4x4 Matrix4x4::SetOrthographicProjection(float leftLimit, float rightLimit, float upperLimit, float lowerLimit, float far, float near)
 {
 	Matrix4x4 temp;
-	temp.matrix[0][0] = 2 / (rightLimit - leftLimit);
-	temp.matrix[1][0] = 0;
-	temp.matrix[2][0] = 0;
-	temp.matrix[3][0] = 0;
-	temp.matrix[0][1] = 0;
-	temp.matrix[1][1] = 2 / (upperLimit - lowerLimit);
-	temp.matrix[2][1] = 0;
-	temp.matrix[3][1] = 0;
-	temp.matrix[0][2] = 0;
-	temp.matrix[1][2] = 0;
-	temp.matrix[2][2] = -1 / (far - near);
-	temp.matrix[3][2] = 0;
-	temp.matrix[0][3] = (rightLimit + leftLimit) / (rightLimit - leftLimit);
-	temp.matrix[1][3] = (upperLimit + lowerLimit);
-	temp.matrix[2][3] = near / (far - near);
-	temp.matrix[3][3] = 1;
-	return;
+	if ((rightLimit - leftLimit) == 0)
+	{
+		temp.matrix[0][0] = 0;
+		temp.matrix[1][0] = 0;
+		temp.matrix[2][0] = 0;
+		temp.matrix[3][0] = 0;
+		temp.matrix[0][1] = 0;
+		temp.matrix[1][1] = 0;
+		temp.matrix[2][1] = 0;
+		temp.matrix[3][1] = 0;
+		temp.matrix[0][2] = 0;
+		temp.matrix[1][2] = 0;
+		temp.matrix[2][2] = 0;
+		temp.matrix[3][2] = 0;
+		temp.matrix[0][3] = 0;
+		temp.matrix[1][3] = 0;
+		temp.matrix[2][3] = 0;
+		temp.matrix[3][3] = 0;
+	}
+	if ((upperLimit - lowerLimit) == 0)
+	{
+		temp.matrix[0][0] = 0;
+		temp.matrix[1][0] = 0;
+		temp.matrix[2][0] = 0;
+		temp.matrix[3][0] = 0;
+		temp.matrix[0][1] = 0;
+		temp.matrix[1][1] = 0;
+		temp.matrix[2][1] = 0;
+		temp.matrix[3][1] = 0;
+		temp.matrix[0][2] = 0;
+		temp.matrix[1][2] = 0;
+		temp.matrix[2][2] = 0;
+		temp.matrix[3][2] = 0;
+		temp.matrix[0][3] = 0;
+		temp.matrix[1][3] = 0;
+		temp.matrix[2][3] = 0;
+		temp.matrix[3][3] = 0;
+	}
+	{
+		temp.matrix[0][0] = 2 / (rightLimit - leftLimit);
+		temp.matrix[1][0] = 0;
+		temp.matrix[2][0] = 0;
+		temp.matrix[3][0] = 0;
+		temp.matrix[0][1] = 0;
+		temp.matrix[1][1] = 2 / (upperLimit - lowerLimit);
+		temp.matrix[2][1] = 0;
+		temp.matrix[3][1] = 0;
+		temp.matrix[0][2] = 0;
+		temp.matrix[1][2] = 0;
+		temp.matrix[2][2] = -1 / (far - near);
+		temp.matrix[3][2] = 0;
+		temp.matrix[0][3] = (rightLimit + leftLimit) / (rightLimit - leftLimit);
+		temp.matrix[1][3] = (upperLimit + lowerLimit);
+		temp.matrix[2][3] = near / (far - near);
+		temp.matrix[3][3] = 1;
+		return temp;
+	}
 }
 Matrix4x4::~Matrix4x4()
 {
@@ -179,22 +219,22 @@ void Matrix4x4::operator = (Matrix4x4 anotherMatrix)
 
 bool Matrix4x4::operator == (Matrix4x4 anotherMatrix)
 {
-	if (matrix[0][0] - anotherMatrix.matrix[0][0] < .00001 &&
-		matrix[0][1] - anotherMatrix.matrix[0][1] < .00001 &&
-		matrix[0][2] - anotherMatrix.matrix[0][2] < .00001 &&
-		matrix[0][3] - anotherMatrix.matrix[0][3] < .00001 &&
-		matrix[1][0] - anotherMatrix.matrix[1][0] < .00001 &&
-		matrix[1][1] - anotherMatrix.matrix[1][1] < .00001 &&
-		matrix[1][2] - anotherMatrix.matrix[1][2] < .00001 &&
-		matrix[1][3] - anotherMatrix.matrix[1][3] < .00001 &&
-		matrix[2][0] - anotherMatrix.matrix[2][0] < .00001 &&
-		matrix[2][1] - anotherMatrix.matrix[2][1] < .00001 &&
-		matrix[2][2] - anotherMatrix.matrix[2][2] < .00001 &&
-		matrix[2][3] - anotherMatrix.matrix[2][3] < .00001 &&
-		matrix[3][0] - anotherMatrix.matrix[3][0] < .00001 &&
-		matrix[3][1] - anotherMatrix.matrix[3][1] < .00001 &&
-		matrix[3][2] - anotherMatrix.matrix[3][2] < .00001 &&
-		matrix[3][3] - anotherMatrix.matrix[3][3] < .00001
+	if (abs(matrix[0][0] - anotherMatrix.matrix[0][0]) < .00001 &&
+		abs(matrix[0][1] - anotherMatrix.matrix[0][1]) < .00001 &&
+		abs(matrix[0][2] - anotherMatrix.matrix[0][2]) < .00001 &&
+		abs(matrix[0][3] - anotherMatrix.matrix[0][3]) < .00001 &&
+		abs(matrix[1][0] - anotherMatrix.matrix[1][0]) < .00001 &&
+		abs(matrix[1][1] - anotherMatrix.matrix[1][1]) < .00001 &&
+		abs(matrix[1][2] - anotherMatrix.matrix[1][2]) < .00001 &&
+		abs(matrix[1][3] - anotherMatrix.matrix[1][3]) < .00001 &&
+		abs(matrix[2][0] - anotherMatrix.matrix[2][0]) < .00001 &&
+		abs(matrix[2][1] - anotherMatrix.matrix[2][1]) < .00001 &&
+		abs(matrix[2][2] - anotherMatrix.matrix[2][2]) < .00001 &&
+		abs(matrix[2][3] - anotherMatrix.matrix[2][3]) < .00001 &&
+		abs(matrix[3][0] - anotherMatrix.matrix[3][0]) < .00001 &&
+		abs(matrix[3][1] - anotherMatrix.matrix[3][1]) < .00001 &&
+		abs(matrix[3][2] - anotherMatrix.matrix[3][2]) < .00001 &&
+		abs(matrix[3][3] - anotherMatrix.matrix[3][3]) < .00001
 		)
 	{
 		return true;

@@ -12,7 +12,7 @@ Vector3D Vector3D::Lerp(Vector3D end, float t)
 }
 float Vector3D::Magnitude()
 {
-	return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
+	return sqrt((x*x) + (y * y) + (z*z));
 }
 void Vector3D::Normalize()
 {
@@ -23,14 +23,17 @@ void Vector3D::Normalize()
 		z = 0.f;
 	}
 	else {
-		x = x / Magnitude();
-		y = y / Magnitude();
-		z = z / Magnitude();
+		x = x / mag;
+		y = y / mag;
+		z = z / mag;
 	}
 }
-float Vector3D::CrossProduct(Vector3D crossProductVector)
+Vector3D Vector3D::CrossProduct(Vector3D crossProductVector)
 {
-	float finalCrossProduct = (y*crossProductVector.z - z*crossProductVector.y, z*crossProductVector.x - x*crossProductVector.z, x*crossProductVector.y - y*crossProductVector.x);
+	Vector3D finalCrossProduct;
+	finalCrossProduct.x = y*crossProductVector.z - z*crossProductVector.y;
+	finalCrossProduct.y = z*crossProductVector.x - x*crossProductVector.z;
+	finalCrossProduct.z = x*crossProductVector.y - y*crossProductVector.x;
 	return finalCrossProduct;
 } 
 float Vector3D::DotProduct(Vector3D dotProductVector)
@@ -83,6 +86,15 @@ Vector3D Vector3D::operator * (float anotherFloat)
 	temp.z = z * anotherFloat;
 	return temp;
 }
+Vector3D Vector3D::operator / (float anotherFloat)
+{
+	Vector3D temp;
+	temp.x = x / anotherFloat;
+	temp.y = y / anotherFloat;
+	temp.z = z / anotherFloat;
+	return temp;
+}
+
 void Vector3D::operator = (Vector3D anotherVector)
 {
 	x = anotherVector.x;
@@ -91,20 +103,19 @@ void Vector3D::operator = (Vector3D anotherVector)
 }
 Vector3D& Vector3D::operator = (float anotherFloat)
 {
-	Vector3D temp;
-	temp.x = anotherFloat;
-	temp.y = anotherFloat;
-	temp.z = anotherFloat;
-	return temp;
+	x = anotherFloat;
+	y = anotherFloat;
+	z = anotherFloat;
+	return *this;
 }
 
 //
 // RETURNTYPE NAME (PARAMETERS)
 bool Vector3D::operator == (Vector3D anotherVector)
 {
-	if (x - anotherVector.x < .00001 &&
-		y - anotherVector.y < .00001 &&
-		z - anotherVector.z < .00001)
+	if (abs(x - anotherVector.x) < .00001 &&
+		abs(y - anotherVector.y) < .00001 &&
+		abs(z - anotherVector.z) < .00001)
 	{
 		return true;
 	}
@@ -120,18 +131,14 @@ Vector3D& Vector3D::operator -= (Vector3D anotherVector)
 	*this = *this - anotherVector;
 	return *this;
 }
-bool operator==(Vector3D leftVector, Vector3D rightVector)
+bool operator==(const Vector3D &leftVector, const Vector3D &rightVector)
 {
-	if (leftVector.x == rightVector.x)
-	{
-		if (leftVector.y == rightVector.y)
-		{
-			if (leftVector.z == rightVector.z)
-			{
-				return true;
-			}
-		}
+	if (&leftVector == &rightVector){ return true; }
+	if (abs(leftVector.x - rightVector.x) < 0.00001f && abs(leftVector.y - rightVector.y) < 0.00001f && abs(leftVector.z - rightVector.z) < 0.00001f)
+	{	
+		return true;	
 	}
+	else return false;
 }
 std::ostream& operator<<(std::ostream& os, const Vector3D& dt)
 {

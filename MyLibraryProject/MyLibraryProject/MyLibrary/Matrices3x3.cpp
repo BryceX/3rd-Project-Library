@@ -4,7 +4,7 @@ TODO:
 
 
 */
-
+#include <cmath>
 #include "Matrix3x3.h"
 
 
@@ -114,37 +114,39 @@ void Matrix3x3::operator = (Matrix3x3 anotherMatrix)
 }
 bool Matrix3x3::operator == (Matrix3x3 anotherMatrix)
 {
-	if (matrix[0][0] - anotherMatrix.matrix[0][0] < .00001 &&
-		matrix[0][1] - anotherMatrix.matrix[0][1] < .00001 &&
-		matrix[0][2] - anotherMatrix.matrix[0][2] < .00001 &&
-		matrix[1][0] - anotherMatrix.matrix[1][0] < .00001 &&
-		matrix[1][1] - anotherMatrix.matrix[1][1] < .00001 &&
-		matrix[1][2] - anotherMatrix.matrix[1][2] < .00001 &&
-		matrix[2][0] - anotherMatrix.matrix[2][0] < .00001 &&
-		matrix[2][1] - anotherMatrix.matrix[2][1] < .00001 &&
-		matrix[2][2] - anotherMatrix.matrix[2][2] < .00001)
+	if (abs(matrix[0][0] - anotherMatrix.matrix[0][0]) < .00001 &&
+		abs(matrix[0][1] - anotherMatrix.matrix[0][1]) < .00001 &&
+		abs(matrix[0][2] - anotherMatrix.matrix[0][2]) < .00001 &&
+		abs(matrix[1][0] - anotherMatrix.matrix[1][0]) < .00001 &&
+		abs(matrix[1][1] - anotherMatrix.matrix[1][1]) < .00001 &&
+		abs(matrix[1][2] - anotherMatrix.matrix[1][2]) < .00001 &&
+		abs(matrix[2][0] - anotherMatrix.matrix[2][0]) < .00001 &&
+		abs(matrix[2][1] - anotherMatrix.matrix[2][1]) < .00001 &&
+		abs(matrix[2][2] - anotherMatrix.matrix[2][2]) < .00001)
 	{
 		return true;
 	}
-	else return false;
+	else
+		return false;
 }
 bool operator==(const Matrix3x3 &leftMatrix, const Matrix3x3 &rightMatrix)
 {
 	// @BryceX: look into using a double for loop
 
-	if (leftMatrix.matrix[0][0] - rightMatrix.matrix[0][0]< .00001 &&
-		leftMatrix.matrix[1][0] - rightMatrix.matrix[1][0]< .00001 &&
-		leftMatrix.matrix[2][0] - rightMatrix.matrix[2][0]< .00001 &&
-		leftMatrix.matrix[0][1] - rightMatrix.matrix[0][1]< .00001 &&
-		leftMatrix.matrix[1][1] - rightMatrix.matrix[1][1]< .00001 &&
-		leftMatrix.matrix[2][1] - rightMatrix.matrix[2][1]< .00001 &&
-		leftMatrix.matrix[0][2] - rightMatrix.matrix[0][2]< .00001 &&
-		leftMatrix.matrix[1][2] - rightMatrix.matrix[1][2]< .00001 &&
-		leftMatrix.matrix[2][2] - rightMatrix.matrix[2][2]< .00001)
+	if (abs(leftMatrix.matrix[0][0] - rightMatrix.matrix[0][0])< .00001 &&
+		abs(leftMatrix.matrix[1][0] - rightMatrix.matrix[1][0])< .00001 &&
+		abs(leftMatrix.matrix[2][0] - rightMatrix.matrix[2][0])< .00001 &&
+		abs(leftMatrix.matrix[0][1] - rightMatrix.matrix[0][1])< .00001 &&
+		abs(leftMatrix.matrix[1][1] - rightMatrix.matrix[1][1])< .00001 &&
+		abs(leftMatrix.matrix[2][1] - rightMatrix.matrix[2][1])< .00001 &&
+		abs(leftMatrix.matrix[0][2] - rightMatrix.matrix[0][2])< .00001 &&
+		abs(leftMatrix.matrix[1][2] - rightMatrix.matrix[1][2])< .00001 &&
+		abs(leftMatrix.matrix[2][2] - rightMatrix.matrix[2][2])< .00001)
 	{
 		return true;
 	}
-	else return false;
+	else
+		return false;
 }
 /*
 Matrix3x3 Matrix3x3::operator * (Vector3D vector)
