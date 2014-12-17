@@ -12,6 +12,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GTEST", "GTEST\GTEST.vcxpro
 		{DBB54AFF-5C0E-4B7F-BDF5-5B36626A0B3C} = {DBB54AFF-5C0E-4B7F-BDF5-5B36626A0B3C}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LibrarydllAssessment3", "LibrarydllAssessment3\LibrarydllAssessment3.vcxproj", "{3926B7A6-FD01-47AE-933C-26830888B9DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -30,6 +32,10 @@ Global
 		{118B173C-949A-4D01-8413-B000CDD54A02}.Debug|Win32.Build.0 = Debug|Win32
 		{118B173C-949A-4D01-8413-B000CDD54A02}.Release|Win32.ActiveCfg = Release|Win32
 		{118B173C-949A-4D01-8413-B000CDD54A02}.Release|Win32.Build.0 = Release|Win32
+		{3926B7A6-FD01-47AE-933C-26830888B9DC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3926B7A6-FD01-47AE-933C-26830888B9DC}.Debug|Win32.Build.0 = Debug|Win32
+		{3926B7A6-FD01-47AE-933C-26830888B9DC}.Release|Win32.ActiveCfg = Release|Win32
+		{3926B7A6-FD01-47AE-933C-26830888B9DC}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
