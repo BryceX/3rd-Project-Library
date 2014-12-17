@@ -1,5 +1,6 @@
-﻿Build started 12/16/2014 4:45:42 PM.
+﻿Build started 12/16/2014 6:02:20 PM.
      1>Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\MyLibraryProject\MyLibraryProject.vcxproj" on node 2 (Rebuild target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppClean.targets(76,5): warning : The process cannot access the file 'c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\mylibraryproject\debug\vc120.idb' because it is being used by another process.
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt MyLibrary\Matrices3x3.cpp MyLibrary\Matrices4x4.cpp MyLibrary\MyLibrary.cpp MyLibrary\Vector2D.cpp MyLibrary\Vector3D.cpp MyLibrary\Vector4D.cpp
          Vector4D.cpp
@@ -30,4 +31,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.52
+Time Elapsed 00:00:01.80

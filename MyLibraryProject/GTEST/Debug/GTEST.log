@@ -1,4 +1,4 @@
-﻿Build started 12/16/2014 4:45:43 PM.
+﻿Build started 12/16/2014 6:02:22 PM.
      1>Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\GTEST\GTEST.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GTEST.cpp stdafx.cpp
@@ -18,7 +18,7 @@
        PostBuildEvent:
          C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\GTEST.exe
          :VCEnd
-         [==========] Running 46 tests from 5 test cases.
+         [==========] Running 51 tests from 6 test cases.
          [----------] Global test environment set-up.
          [----------] 4 tests from mylibrary
          [ RUN      ] mylibrary.lerp
@@ -37,7 +37,7 @@
          [ RUN      ] vec2d.mag
          [       OK ] vec2d.mag (0 ms)
          [ RUN      ] vec2d.norm
-         [       OK ] vec2d.norm (1 ms)
+         [       OK ] vec2d.norm (0 ms)
          [ RUN      ] vec2d.dotP
          [       OK ] vec2d.dotP (0 ms)
          [ RUN      ] vec2d.opAdd
@@ -82,7 +82,7 @@
          [ RUN      ] vec3d.opMinusEqual
          [       OK ] vec3d.opMinusEqual (0 ms)
          [ RUN      ] vec3d.opIsEqualFriend
-         [       OK ] vec3d.opIsEqualFriend (1 ms)
+         [       OK ] vec3d.opIsEqualFriend (0 ms)
          [ RUN      ] vec3d.opAddF
          [       OK ] vec3d.opAddF (0 ms)
          [ RUN      ] vec3d.opSubF
@@ -110,7 +110,7 @@
          [       OK ] vec4d.opEqual (0 ms)
          [----------] 6 tests from vec4d (0 ms total)
          
-         [----------] 7 tests from M3x3
+         [----------] 9 tests from M3x3
          [ RUN      ] M3x3.fill
          [       OK ] M3x3.fill (0 ms)
          [ RUN      ] M3x3.transpose
@@ -125,13 +125,26 @@
          [       OK ] M3x3.opMulti (0 ms)
          [ RUN      ] M3x3.opEqual
          [       OK ] M3x3.opEqual (0 ms)
-         [----------] 7 tests from M3x3 (0 ms total)
+         [ RUN      ] M3x3.opIsEqual
+         [       OK ] M3x3.opIsEqual (0 ms)
+         [ RUN      ] M3x3.opIsEqualFriend
+         [       OK ] M3x3.opIsEqualFriend (0 ms)
+         [----------] 9 tests from M3x3 (0 ms total)
+         
+         [----------] 3 tests from M4x4
+         [ RUN      ] M4x4.Fill
+         [       OK ] M4x4.Fill (0 ms)
+         [ RUN      ] M4x4.transpose
+         [       OK ] M4x4.transpose (0 ms)
+         [ RUN      ] M4x4.translate
+         [       OK ] M4x4.translate (0 ms)
+         [----------] 3 tests from M4x4 (0 ms total)
          
          [----------] Global test environment tear-down
-         [==========] 46 tests from 5 test cases ran. (3 ms total)
-         [  PASSED  ] 46 tests.
+         [==========] 51 tests from 6 test cases ran. (4 ms total)
+         [  PASSED  ] 51 tests.
      1>Done Building Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\GTEST\GTEST.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.29
+Time Elapsed 00:00:01.19

@@ -128,7 +128,7 @@ TEST(vec2d, opIsEqual)
 	Vector2D testingVector1;
 	testingVector1.x = 1;
 	testingVector1.y = 1;
-	bool opisequal = (testingVector0.x == testingVector1.x);
+	bool opisequal = (testingVector0 == testingVector1);
 	EXPECT_EQ(true, opisequal);
 }
 TEST(vec2d, opPlusEqual)
@@ -206,7 +206,7 @@ TEST(vec3d, norm)
 	testingVector.Normalize();
 	EXPECT_FLOAT_EQ(0.11043152607f, testingVector.x);
 	EXPECT_FLOAT_EQ(0.f, testingVector.y);
-	//EXPECT_FLOAT_EQ(testingVector.z, testingVector.z);  NOT WORKING PROPERLY
+	EXPECT_FLOAT_EQ(testingVector.z, testingVector.z);
 }
 /*
 TEST(vec3d, crossP)
@@ -368,7 +368,7 @@ TEST(vec3d, opAddF)
 	testingVector0.x = 1;
 	testingVector0.y = 1;
 	testingVector0.z = 1;
-	float testFloat = 3; //something not working here
+	float testFloat = 9; //something not working here
 	Vector3D testingVector1;
 	testingVector1.x = 4;
 	testingVector1.y = 4;
@@ -427,6 +427,7 @@ TEST(vec3d, opEqualsF)
 	testingVector1.z = 0;
 	EXPECT_EQ(testingVector1, (testingVector0 - testFloat));
 }
+//Vector4 tests start here
 TEST(vec4d, mag)
 {
 	Vector4D testingVector0;
@@ -518,6 +519,7 @@ TEST(vec4d, opEqual)
 	result.w = 1;
 	EXPECT_EQ(result, testingVector0);
 }
+//Matrix3x3 tests start here
 TEST(M3x3, fill)
 {
 	Matrix3x3 testMatrix0;
@@ -630,7 +632,101 @@ TEST(M3x3, opEqual)
 	(result = testMatrix0);
 	EXPECT_EQ(result, testMatrix0);
 }
+TEST(M3x3, opIsEqual)
+{
+	Matrix3x3 testMatrix0;
+	testMatrix0.FillMatrix(1, 2, 2, 3, 4, 5, 6, 7, 9);
+	Matrix3x3 testMatrix1;
+	testMatrix1 = testMatrix0;
 
+	bool result = (testMatrix0 == testMatrix1);
+	EXPECT_EQ(true, result);
+}
+TEST(M3x3, opIsEqualFriend)
+{
+	Matrix3x3 testMatrix0;
+	testMatrix0.FillMatrix(1, 2, 2, 3, 4, 5, 6, 7, 9);
+	Matrix3x3 testMatrix1;
+	testMatrix1 = testMatrix0;
+	EXPECT_EQ(true, operator==(testMatrix0, testMatrix1));
+}
+
+//Matrix4x4 tests start here
+TEST(M4x4, Fill)
+{
+	Matrix4x4 testMatrix0;
+	testMatrix0.FillMatrix(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+	Matrix4x4 result;
+	result.matrix[0][0] = 1;
+	result.matrix[1][0] = 1;
+	result.matrix[2][0] = 1;
+	result.matrix[3][0] = 1;
+	result.matrix[0][1] = 1;
+	result.matrix[1][1] = 1;
+	result.matrix[2][1] = 1;
+	result.matrix[3][1] = 1;
+	result.matrix[0][2] = 1;
+	result.matrix[1][2] = 1;
+	result.matrix[2][2] = 1;
+	result.matrix[3][2] = 1;
+	result.matrix[0][3] = 1;
+	result.matrix[1][3] = 1;
+	result.matrix[2][3] = 1;
+	result.matrix[3][3] = 1;
+	EXPECT_EQ(result, testMatrix0);
+}
+TEST(M4x4, transpose)
+{
+	Matrix4x4 testMatrix0;
+	testMatrix0.FillMatrix(1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2, 1, 1, 1, 2);
+	Matrix4x4 testMatrix1;
+	testMatrix1.matrix[0][0] = 1;
+	testMatrix1.matrix[1][0] = 1;
+	testMatrix1.matrix[2][0] = 1;
+	testMatrix1.matrix[3][0] = 1;
+	testMatrix1.matrix[0][1] = 1;
+	testMatrix1.matrix[1][1] = 1;
+	testMatrix1.matrix[2][1] = 1;
+	testMatrix1.matrix[3][1] = 1;
+	testMatrix1.matrix[0][2] = 1;
+	testMatrix1.matrix[1][2] = 1;
+	testMatrix1.matrix[2][2] = 1;
+	testMatrix1.matrix[3][2] = 1;
+	testMatrix1.matrix[0][3] = 2;
+	testMatrix1.matrix[1][3] = 2;
+	testMatrix1.matrix[2][3] = 2;
+	testMatrix1.matrix[3][3] = 2;
+	testMatrix0.Transpose();
+	EXPECT_EQ(testMatrix1, testMatrix0);
+}
+TEST(M4x4, translate)
+{
+	Matrix4x4 testMatrix;
+	testMatrix.FillMatrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	Vector4D testVector;
+	testVector.x = 1;
+	testVector.y = 1;
+	testVector.z = 1;
+	testVector.w = 1;
+	Matrix4x4 result;
+	result.FillMatrix(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+	testMatrix.SetTranslate(testVector);
+	EXPECT_EQ(result, testMatrix);
+}
+TEST(M4x4, )
+{
+	Matrix4x4 testMatrix;
+	testMatrix.FillMatrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	Vector4D testVector;
+	testVector.x = 1;
+	testVector.y = 1;
+	testVector.z = 1;
+	testVector.w = 1;
+	Matrix4x4 result;
+	result.FillMatrix(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1);
+	testMatrix.SetTranslate(testVector);
+	EXPECT_EQ(result, testMatrix);
+}
 
 
 int _tmain(int argc, _TCHAR* argv[])

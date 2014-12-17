@@ -1,4 +1,4 @@
-﻿Build started 12/16/2014 2:45:06 PM.
+﻿Build started 12/16/2014 5:06:20 PM.
      1>Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\TestingProject\TestingProject.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I../MyLibraryProject /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
@@ -11,4 +11,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.71
+Time Elapsed 00:00:00.74

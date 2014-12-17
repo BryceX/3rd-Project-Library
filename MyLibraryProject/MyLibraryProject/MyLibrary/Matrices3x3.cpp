@@ -128,7 +128,7 @@ bool Matrix3x3::operator == (Matrix3x3 anotherMatrix)
 	}
 	else return false;
 }
-bool operator==(Matrix3x3 leftMatrix, Matrix3x3 rightMatrix)
+bool operator==(const Matrix3x3 &leftMatrix, const Matrix3x3 &rightMatrix)
 {
 	// @BryceX: look into using a double for loop
 
