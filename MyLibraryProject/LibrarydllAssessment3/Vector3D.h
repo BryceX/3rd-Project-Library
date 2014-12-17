@@ -32,7 +32,7 @@ public:
 	//done
 	Vector3D& operator -= (Vector3D anotherVector);	
 	//done
-	friend bool operator == (const Vector3D &leftVector, const Vector3D &rightVector);
+	DLLEXPORT friend bool operator == (const Vector3D &leftVector, const Vector3D &rightVector);
 	//done
 	Vector3D operator + (float anotherFloat);
 	//done
@@ -52,9 +52,5 @@ public:
 	{
 		x = a_x; y = a_y; z = a_z;
 	}
-	friend std::ostream& operator<<(std::ostream& os, const Vector3D& );
+	DLLEXPORT friend std::ostream& operator<<(std::ostream& os, const Vector3D&);
 };
-	
-	
-
-

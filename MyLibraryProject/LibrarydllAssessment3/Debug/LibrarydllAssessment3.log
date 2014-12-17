@@ -1,0 +1,180 @@
+﻿Build started 12/17/2014 12:50:28 PM.
+     1>Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\LibrarydllAssessment3\LibrarydllAssessment3.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D LIBRARYDLLASSESSMENT3_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Matrices3x3.cpp Matrices4x4.cpp MyLibrary.cpp Vector2D.cpp Vector3D.cpp Vector4D.cpp
+         Vector4D.cpp
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(5): warning C4273: 'Vector4D::Vector4D' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.h(37) : see previous definition of '{ctor}'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(12): warning C4273: 'Vector4D::Vector4D' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.h(38) : see previous definition of '{ctor}'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(17): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(18): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(19): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(20): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(23): warning C4273: 'Vector4D::Magnitude' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.h(16) : see previous definition of 'Magnitude'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(27): warning C4273: 'Vector4D::Normalize' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.h(18) : see previous definition of 'Normalize'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(34): warning C4273: 'Vector4D::~Vector4D' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.h(39) : see previous definition of '{dtor}'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(38): warning C4273: 'Vector4D::operator +' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.h(20) : see previous definition of '+'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(47): warning C4273: 'Vector4D::operator -' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.h(22) : see previous definition of '-'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(56): warning C4273: 'Vector4D::operator *' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.h(24) : see previous definition of '*'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(65): warning C4273: 'Vector4D::operator =' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.h(27) : see previous definition of '='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(74): warning C4273: 'Vector4D::operator ==' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.h(31) : see previous definition of '=='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(83): warning C4273: 'operator ==' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.h(33) : see previous definition of '=='
+         Vector3D.cpp
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(5): warning C4273: 'Vector3D::Vector3D' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(11) : see previous definition of '{ctor}'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(8): warning C4273: 'Vector3D::Lerp' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(17) : see previous definition of 'Lerp'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(14): warning C4273: 'Vector3D::Magnitude' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(19) : see previous definition of 'Magnitude'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(18): warning C4273: 'Vector3D::Normalize' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(21) : see previous definition of 'Normalize'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(32): warning C4273: 'Vector3D::CrossProduct' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(23) : see previous definition of 'CrossProduct'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(40): warning C4273: 'Vector3D::DotProduct' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(25) : see previous definition of 'DotProduct'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(46): warning C4273: 'Vector3D::~Vector3D' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(12) : see previous definition of '{dtor}'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(50): warning C4273: 'Vector3D::operator +' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(27) : see previous definition of '+'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(58): warning C4273: 'Vector3D::operator -' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(29) : see previous definition of '-'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(66): warning C4273: 'Vector3D::operator +' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(37) : see previous definition of '+'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(74): warning C4273: 'Vector3D::operator -' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(39) : see previous definition of '-'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(82): warning C4273: 'Vector3D::operator *' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(41) : see previous definition of '*'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(90): warning C4273: 'Vector3D::operator /' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(43) : see previous definition of '/'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(99): warning C4273: 'Vector3D::operator =' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(45) : see previous definition of '='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(105): warning C4273: 'Vector3D::operator =' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(47) : see previous definition of '='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(115): warning C4273: 'Vector3D::operator ==' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(49) : see previous definition of '=='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(125): warning C4273: 'Vector3D::operator +=' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(31) : see previous definition of '+='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(130): warning C4273: 'Vector3D::operator -=' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(33) : see previous definition of '-='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(135): warning C4273: 'operator ==' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(35) : see previous definition of '=='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.cpp(144): warning C4273: 'operator <<' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector3d.h(55) : see previous definition of '<<'
+         Vector2D.cpp
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(4): warning C4273: 'Vector2D::Vector2D' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(42) : see previous definition of '{ctor}'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(9): warning C4273: 'Vector2D::Vector2D' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(13) : see previous definition of '{ctor}'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(15): warning C4273: 'Vector2D::Lerp' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(19) : see previous definition of 'Lerp'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(21): warning C4273: 'Vector2D::Magnitude' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(21) : see previous definition of 'Magnitude'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(25): warning C4273: 'Vector2D::Normalize' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(23) : see previous definition of 'Normalize'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(39): warning C4273: 'Vector2D::DotProduct' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(25) : see previous definition of 'DotProduct'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(45): warning C4273: 'Vector2D::~Vector2D' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(43) : see previous definition of '{dtor}'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(48): warning C4273: 'Vector2D::operator +' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(27) : see previous definition of '+'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(56): warning C4273: 'Vector2D::operator -' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(29) : see previous definition of '-'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(63): warning C4273: 'Vector2D::operator *' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(31) : see previous definition of '*'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(71): warning C4273: 'Vector2D::operator =' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(33) : see previous definition of '='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(76): warning C4273: 'Vector2D::operator ==' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(35) : see previous definition of '=='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(84): warning C4273: 'Vector2D::operator +=' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(37) : see previous definition of '+='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(89): warning C4273: 'Vector2D::operator -=' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(39) : see previous definition of '-='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.cpp(94): warning C4273: 'operator ==' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector2d.h(41) : see previous definition of '=='
+         MyLibrary.cpp
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\mylibrary.cpp(4): warning C4273: 'Lerp' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\mylibrary.h(17) : see previous definition of 'Lerp'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\mylibrary.cpp(8): warning C4273: 'GetRadians' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\mylibrary.h(19) : see previous definition of 'GetRadians'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\mylibrary.cpp(9): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\mylibrary.cpp(12): warning C4273: 'GetDegrees' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\mylibrary.h(21) : see previous definition of 'GetDegrees'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\mylibrary.cpp(13): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\mylibrary.cpp(16): warning C4273: 'NextPow2' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\mylibrary.h(23) : see previous definition of 'NextPow2'
+         Matrices4x4.cpp
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices4x4.cpp(5): warning C4273: 'Matrix4x4::Matrix4x4' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix4x4.h(13) : see previous definition of '{ctor}'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices4x4.cpp(9): warning C4273: 'Matrix4x4::FillMatrix' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix4x4.h(16) : see previous definition of 'FillMatrix'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices4x4.cpp(28): warning C4273: 'Matrix4x4::Transpose' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix4x4.h(18) : see previous definition of 'Transpose'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices4x4.cpp(49): warning C4273: 'Matrix4x4::SetTranslate' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix4x4.h(20) : see previous definition of 'SetTranslate'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices4x4.cpp(70): warning C4273: 'Matrix4x4::SetRotate' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix4x4.h(22) : see previous definition of 'SetRotate'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices4x4.cpp(91): warning C4273: 'Matrix4x4::SetScale' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix4x4.h(24) : see previous definition of 'SetScale'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices4x4.cpp(112): warning C4273: 'Matrix4x4::SetOrthographicProjection' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix4x4.h(26) : see previous definition of 'SetOrthographicProjection'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices4x4.cpp(173): warning C4273: 'Matrix4x4::~Matrix4x4' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix4x4.h(35) : see previous definition of '{dtor}'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices4x4.cpp(177): warning C4273: 'Matrix4x4::operator *' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix4x4.h(28) : see previous definition of '*'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices4x4.cpp(201): warning C4273: 'Matrix4x4::operator =' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix4x4.h(30) : see previous definition of '='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices4x4.cpp(221): warning C4273: 'Matrix4x4::operator ==' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix4x4.h(32) : see previous definition of '=='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices4x4.cpp(245): warning C4273: 'operator ==' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix4x4.h(34) : see previous definition of '=='
+         Matrices3x3.cpp
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices3x3.cpp(12): warning C4273: 'Matrix3x3::Matrix3x3' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix3x3.h(13) : see previous definition of '{ctor}'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices3x3.cpp(15): warning C4273: 'Matrix3x3::FillMatrix' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix3x3.h(16) : see previous definition of 'FillMatrix'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices3x3.cpp(27): warning C4273: 'Matrix3x3::Transpose' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix3x3.h(18) : see previous definition of 'Transpose'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices3x3.cpp(42): warning C4273: 'Matrix3x3::SetTranslate' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix3x3.h(20) : see previous definition of 'SetTranslate'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices3x3.cpp(56): warning C4273: 'Matrix3x3::SetRotate' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix3x3.h(22) : see previous definition of 'SetRotate'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices3x3.cpp(70): warning C4273: 'Matrix3x3::SetScale' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix3x3.h(24) : see previous definition of 'SetScale'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices3x3.cpp(86): warning C4273: 'Matrix3x3::~Matrix3x3' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix3x3.h(33) : see previous definition of '{dtor}'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices3x3.cpp(89): warning C4273: 'Matrix3x3::operator *' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix3x3.h(26) : see previous definition of '*'
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices3x3.cpp(104): warning C4273: 'Matrix3x3::operator =' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix3x3.h(28) : see previous definition of '='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices3x3.cpp(116): warning C4273: 'Matrix3x3::operator ==' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix3x3.h(30) : see previous definition of '=='
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrices3x3.cpp(133): warning C4273: 'operator ==' : inconsistent dll linkage
+                 c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\matrix3x3.h(32) : see previous definition of '=='
+         Generating Code...
+     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\librarydllassessment3\vector4d.cpp(97): warning C4715: 'operator==' : not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\LibrarydllAssessment3.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\LibrarydllAssessment3.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\LibrarydllAssessment3.lib" /MACHINE:X86 /DLL Debug\Matrices3x3.obj
+         Debug\Matrices4x4.obj
+         Debug\MyLibrary.obj
+         Debug\Vector2D.obj
+         Debug\Vector3D.obj
+         Debug\Vector4D.obj
+            Creating library C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\LibrarydllAssessment3.lib and object C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\LibrarydllAssessment3.exp
+     1>Matrices3x3.obj : warning LNK4217: locally defined symbol ??1Vector3D@@QAE@XZ (public: __thiscall Vector3D::~Vector3D(void)) imported in function "public: class Matrix3x3 __thiscall Matrix3x3::SetRotate(class Vector3D,float)" (?SetRotate@Matrix3x3@@QAE?AV1@VVector3D@@M@Z)
+     1>Matrices4x4.obj : warning LNK4217: locally defined symbol ??1Vector4D@@QAE@XZ (public: __thiscall Vector4D::~Vector4D(void)) imported in function "public: class Matrix4x4 __thiscall Matrix4x4::SetRotate(class Vector4D,float)" (?SetRotate@Matrix4x4@@QAE?AV1@VVector4D@@M@Z)
+         LibrarydllAssessment3.vcxproj -> C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\LibrarydllAssessment3.dll
+     1>Done Building Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\LibrarydllAssessment3\LibrarydllAssessment3.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.83

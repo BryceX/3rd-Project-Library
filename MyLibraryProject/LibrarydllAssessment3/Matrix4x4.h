@@ -31,9 +31,9 @@ public:
 	//done
 	bool operator == (Matrix4x4 anotherMatrix);
 	//done
-	friend bool operator == (const Matrix4x4 &leftMatrix, const Matrix4x4 &rightMatrix);
+	DLLEXPORT friend bool operator == (const Matrix4x4 &leftMatrix, const Matrix4x4 &rightMatrix);
 	~Matrix4x4();
-	friend std::ostream &operator<<(std::ostream &output, const Matrix4x4 &matrix)
+	DLLEXPORT friend std::ostream &operator<<(std::ostream &output, const Matrix4x4 &matrix)
 	{
 		for (int c = 0; c<4; ++c) 
 		{

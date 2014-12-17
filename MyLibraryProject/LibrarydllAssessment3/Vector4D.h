@@ -30,7 +30,7 @@ public:
 	//done
 	bool operator == (Vector4D anotherVector);
 	//done
-	friend bool operator == (Vector4D leftVector, Vector4D rightVector);
+	DLLEXPORT friend bool operator == (Vector4D leftVector, Vector4D rightVector);
 	Vector4D operator += (Vector4D anotherVector);
 	Vector4D operator -= (Vector4D anotherVector);
 

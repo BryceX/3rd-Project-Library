@@ -1,16 +1,6 @@
-﻿Build started 12/17/2014 11:58:46 AM.
-     1>Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\GTEST\GTEST.vcxproj" on node 2 (Rebuild target(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt GTEST.cpp stdafx.cpp
-         stdafx.cpp
-         GTEST.cpp
-     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(11): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(18): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(24): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(53): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\bryson.au\documents\github\3rd-project-library\mylibraryproject\gtest\gtest.cpp(196): warning C4305: 'argument' : truncation from 'double' to 'float'
-         Generating Code...
-       Link:
+﻿Build started 12/17/2014 12:51:58 PM.
+     1>Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\GTEST\GTEST.vcxproj" on node 2 (Build target(s)).
+     1>Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\GTEST.exe" /INCREMENTAL /NOLOGO gtestd.lib MyLibraryProject.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\GTEST.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\GTEST.lib" /MACHINE:X86 Debug\GTEST.obj
          Debug\stdafx.obj
          GTEST.vcxproj -> C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug\GTEST.exe
@@ -94,7 +84,7 @@
          [       OK ] vec3d.opDivF (0 ms)
          [ RUN      ] vec3d.opEqualsF
          [       OK ] vec3d.opEqualsF (0 ms)
-         [----------] 18 tests from vec3d (1 ms total)
+         [----------] 18 tests from vec3d (2 ms total)
          
          [----------] 6 tests from vec4d
          [ RUN      ] vec4d.mag
@@ -102,14 +92,14 @@
          [ RUN      ] vec4d.norm
          [       OK ] vec4d.norm (0 ms)
          [ RUN      ] vec4d.opAdd
-         [       OK ] vec4d.opAdd (1 ms)
+         [       OK ] vec4d.opAdd (0 ms)
          [ RUN      ] vec4d.opSub
          [       OK ] vec4d.opSub (0 ms)
          [ RUN      ] vec4d.opMultiF
          [       OK ] vec4d.opMultiF (0 ms)
          [ RUN      ] vec4d.opEqual
          [       OK ] vec4d.opEqual (0 ms)
-         [----------] 6 tests from vec4d (1 ms total)
+         [----------] 6 tests from vec4d (0 ms total)
          
          [----------] 9 tests from M3x3
          [ RUN      ] M3x3.fill
@@ -117,9 +107,9 @@
          [ RUN      ] M3x3.transpose
          [       OK ] M3x3.transpose (0 ms)
          [ RUN      ] M3x3.translate
-         [       OK ] M3x3.translate (0 ms)
+         [       OK ] M3x3.translate (1 ms)
          [ RUN      ] M3x3.rotate
-         [       OK ] M3x3.rotate (1 ms)
+         [       OK ] M3x3.rotate (0 ms)
          [ RUN      ] M3x3.scale
          [       OK ] M3x3.scale (0 ms)
          [ RUN      ] M3x3.opMulti
@@ -144,7 +134,7 @@
          [ RUN      ] M4x4.scale
          [       OK ] M4x4.scale (0 ms)
          [ RUN      ] M4x4.orthoProj
-         [       OK ] M4x4.orthoProj (1 ms)
+         [       OK ] M4x4.orthoProj (0 ms)
          [ RUN      ] M4x4.opMulti
          [       OK ] M4x4.opMulti (0 ms)
          [ RUN      ] M4x4.opEqual
@@ -158,8 +148,8 @@
          [----------] Global test environment tear-down
          [==========] 59 tests from 6 test cases ran. (5 ms total)
          [  PASSED  ] 59 tests.
-     1>Done Building Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\GTEST\GTEST.vcxproj" (Rebuild target(s)).
+     1>Done Building Project "C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\GTEST\GTEST.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.36
+Time Elapsed 00:00:00.59

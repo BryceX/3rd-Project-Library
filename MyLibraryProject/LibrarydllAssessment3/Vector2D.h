@@ -38,7 +38,7 @@ public:
 	//done
 	Vector2D& operator -= (Vector2D anotherVector);
 	//done
-	friend bool operator == (const Vector2D &leftVector, const Vector2D &rightVector); // operator==(thing, otherThing)
+	DLLEXPORT friend bool operator == (const Vector2D &leftVector, const Vector2D &rightVector); // operator==(thing, otherThing)
 	Vector2D();
 	~Vector2D();
 };

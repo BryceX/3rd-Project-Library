@@ -39,7 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\bryson.au\Desktop\gtest-1.7.0\msvc\gtest\Release;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\bryson.au\Desktop\gtest-1.7.0;C:\Users\bryson.au\Desktop\gtest-1.7.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\bryson.au\Desktop\gtest-1.7.0\msvc\gtest-md\Debug;C:\Users\bryson.au\Documents\GitHub\3rd-Project-Library\MyLibraryProject\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>C:\Users\bryson.au\Desktop\gtest-1.7.0\msvc\gtest\Release;$(IncludePath)</IncludePath>
@@ -49,11 +50,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../MyLibraryProject</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../LibrarydllAssessment3</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>../Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>gtestd.lib;LibrarydllAssessment3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -73,12 +75,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MyLibraryProject\MyLibraryProject.vcxproj">
-      <Project>{dbb54aff-5c0e-4b7f-bdf5-5b36626a0b3c}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="..\GTEST\GTEST.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
